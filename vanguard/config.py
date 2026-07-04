@@ -60,8 +60,8 @@ _TOKEN_PLACEHOLDERS = {"", "$CLEAN_TOKEN", "your_token_here", "your_deriv_token_
 USE_DERIV = DERIV_API_TOKEN not in _TOKEN_PLACEHOLDERS
 
 # ── Logging ────────────────────────────────────────────────────────────────────
-DB_PATH         = "prophet_trades.db"
-LOG_FILE        = "prophet.log"
+DB_PATH         = "vanguard_trades.db"
+LOG_FILE        = "vanguard.log"
 LOG_LEVEL       = "INFO"
 
 # ── Process Resource Limits ────────────────────────────────────────────────────

@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """
-PROPHET CLI — Stop Background Process
+VANGUARD CLI — Stop Background Process
 
 Usage:
-    python stop_prophet.py
+    python stop_vanguard.py
 """
 
 import sys
@@ -13,8 +13,8 @@ import psutil
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 
-def find_prophet_processes():
-    """Find all PROPHET processes."""
+def find_vanguard_processes():
+    """Find all VANGUARD processes."""
     processes = []
     for proc in psutil.process_iter(['pid', 'name', 'cmdline']):
         try:
@@ -27,14 +27,14 @@ def find_prophet_processes():
     return processes
 
 
-def stop_prophet():
-    """Stop PROPHET background processes."""
-    print("🛑 Stopping PROPHET...")
+def stop_vanguard():
+    """Stop VANGUARD background processes."""
+    print("🛑 Stopping VANGUARD...")
 
-    processes = find_prophet_processes()
+    processes = find_vanguard_processes()
 
     if not processes:
-        print("✅ PROPHET is not running")
+        print("✅ VANGUARD is not running")
         return
 
     stopped_count = 0
@@ -52,8 +52,8 @@ def stop_prophet():
             except:
                 pass
 
-    print(f"✅ Stopped {stopped_count} PROPHET process(es)")
+    print(f"✅ Stopped {stopped_count} VANGUARD process(es)")
 
 
 if __name__ == "__main__":
-    stop_prophet()
+    stop_vanguard()

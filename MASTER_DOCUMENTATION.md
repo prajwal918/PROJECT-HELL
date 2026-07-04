@@ -241,32 +241,32 @@ class ProjectHellDemo:
         print("\n[+] OVERSEER available (independent system)")
         return True
 
-    async def start_prophet(self):
-        """Show PROPHET status"""
+    async def start_vanguard(self):
+        """Show VANGUARD status"""
         print("\n" + "="*60)
-        print("  PROPHET STATUS")
+        print("  VANGUARD STATUS")
         print("="*60)
 
-        prophet_dir = PROJECT_ROOT / "prophet"
+        vanguard_dir = PROJECT_ROOT / "vanguard"
 
-        if not prophet_dir.exists():
+        if not vanguard_dir.exists():
             # Try alternative paths
             alt_paths = [
-                PROJECT_ROOT / "prophet",
-                Path("C:\\Users\\jogip\\OneDrive\\Desktop\\PROJECT HELL\\prophet")
+                PROJECT_ROOT / "vanguard",
+                Path("C:\\Users\\jogip\\OneDrive\\Desktop\\PROJECT HELL\\vanguard")
             ]
             
             for alt_path in alt_paths:
                 if alt_path.exists():
-                    prophet_dir = alt_path
+                    vanguard_dir = alt_path
                     break
             else:
-                print("[-] PROPHET directory not found")
-                print(f"  Expected: {PROJECT_ROOT / 'prophet'}")
+                print("[-] VANGUARD directory not found")
+                print(f"  Expected: {PROJECT_ROOT / 'vanguard'}")
                 return False
 
-        print(f"[*] PROPHET directory: {prophet_dir}")
-        print("\n[*] PROPHET System Components:")
+        print(f"[*] VANGUARD directory: {vanguard_dir}")
+        print("\n[*] VANGUARD System Components:")
         print("   - Volume Profile Detection")
         print("   - CVD Divergence")
         print("   - Iceberg Detection")
@@ -275,7 +275,7 @@ class ProjectHellDemo:
         print("   - Deriv API")
         print("   - 15-minute binaries")
         print("   - Automated")
-        print("\n[+] PROPHET available (independent system)")
+        print("\n[+] VANGUARD available (independent system)")
         return True
 
     async def show_data_flow(self):
@@ -310,7 +310,7 @@ V
 INDEPENDENT SYSTEMS:
 
 OVERSEER -> MotiveWave -> MT5/OANDA (Forex)
-PROPHET -> Deriv API (Binary)
+VANGUARD -> Deriv API (Binary)
         """)
 
     async def show_configuration(self):
@@ -404,7 +404,7 @@ PROPHET -> Deriv API (Binary)
                 "NOVA": await self.start_nova(),
                 "AEGIS": await self.start_aegis(),
                 "OVERSEER": await self.start_overseer(),
-                "PROPHET": await self.start_prophet(),
+                "VANGUARD": await self.start_vanguard(),
             }
 
             print("\n" + "="*60)
@@ -542,7 +542,7 @@ Cannot establish WebSocket connection to Rithmic API for paper trading account. 
 - **AEGIS:** 15-min binary options (MBO absorption)
 - **NEXUS:** Rust data pipeline (Rithmic integration)
 - **OVERSEER:** Forex system (152 gates)
-- **PROPHET:** Binary signal system
+- **VANGUARD:** Binary signal system
 
 ### Why We Need Rithmic API
 - **Level 3 MBO Data:** For NOVA/AEGIS L3 detection gates
@@ -764,7 +764,7 @@ PROJECT HELL has been successfully upgraded to **direct Rithmic integration**, e
 
 ```
 MotiveWave → OVERSEER → MT5/OANDA (Forex)
-Deriv API → PROPHET → Binary Options
+Deriv API → VANGUARD → Binary Options
 ```
 
 ---
@@ -789,7 +789,7 @@ Deriv API → PROPHET → Binary Options
 - Added native order ID tracking
 - Unlimited depth support
 
-### PROPHET (Project 3)
+### VANGUARD (Project 3)
 **Status:** Production Ready
 **Version:** v1.0
 **Data Source:** Deriv API
@@ -889,9 +889,9 @@ cd "C:\Users\jogip\OneDrive\Desktop\PROJECT HELL\overseer"
 python main.py
 ```
 
-**Start PROPHET (Terminal 5):**
+**Start VANGUARD (Terminal 5):**
 ```cmd
-cd "C:\Users\jogip\OneDrive\Desktop\PROJECT HELL\prophet"
+cd "C:\Users\jogip\OneDrive\Desktop\PROJECT HELL\vanguard"
 python main.py
 ```
 
@@ -953,11 +953,11 @@ PROJECT HELL/
 │   │   └── README_V2.md           # NEW (v2.0 docs)
 │   └── src/
 │
-├── prophet/                        # Project 3
+├── vanguard/                        # Project 3
 │   ├── main.py
 │   ├── execution/
 │   │   └── deriv_bridge.py
-│   └── prophet_signal/
+│   └── vanguard_signal/
 │
 └── nova/                           # Projects 4 & 5
     ├── nova_logic/                # Project 4: NOVA
@@ -1241,7 +1241,7 @@ PROJECT HELL is a unified trading ecosystem comprising 5 interconnected systems 
 
 1. **OVERSEER** — Real-time forex system with 152 gates
 2. **NEXUS** — Rust backend for L3 order flow data
-3. **PROPHET** — Deriv API binary options system
+3. **VANGUARD** — Deriv API binary options system
 4. **NOVA** — 1-minute news binary system (Phase 1)
 5. **AEGIS** — 15-minute absorption trap system (Phase 2)
 
@@ -1289,7 +1289,7 @@ PROJECT HELL is a unified trading ecosystem comprising 5 interconnected systems 
 
 ---
 
-### 3. PROPHET — Deriv API Binary Options
+### 3. VANGUARD — Deriv API Binary Options
 
 **Purpose:** Binary options execution on Deriv platform
 
@@ -1306,7 +1306,7 @@ PROJECT HELL is a unified trading ecosystem comprising 5 interconnected systems 
 **Asset Class:** Binary Options
 **Broker:** Deriv
 
-**Location:** `PROJECT HELL\prophet\`
+**Location:** `PROJECT HELL\vanguard\`
 
 ---
 
@@ -1404,11 +1404,11 @@ PROJECT HELL is a unified trading ecosystem comprising 5 interconnected systems 
 └──────────────────────────────┘  └─────────────────────────┘
 ```
 
-### Secondary Data Path (PROPHET)
+### Secondary Data Path (VANGUARD)
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
-│                        PROPHET                                 │
+│                        VANGUARD                                 │
 │                                                                 │
 │  • Deriv API integration                                        │
 │  • Signal engine (volume profile, CVD)                          │
@@ -1458,7 +1458,7 @@ PROJECT HELL is a unified trading ecosystem comprising 5 interconnected systems 
 - **Data:** Binary options execution
 - **Usage:** Automated trade placement
 
-### PROPHET → Deriv API
+### VANGUARD → Deriv API
 - **Protocol:** WebSocket
 - **Service:** Deriv Trading API
 - **Data:** Binary options execution
@@ -1547,9 +1547,9 @@ python main.py
 - Generates breakout signals
 - Automated execution on Deriv
 
-**Step 6: Start PROPHET (Optional)**
+**Step 6: Start VANGUARD (Optional)**
 ```cmd
-cd "C:\Users\jogip\OneDrive\Desktop\PROJECT HELL\prophet"
+cd "C:\Users\jogip\OneDrive\Desktop\PROJECT HELL\vanguard"
 python main.py
 ```
 - Signal engine for binary options
@@ -1576,7 +1576,7 @@ NEXUS_WS_URL=ws://localhost:9001
 USE_DEMO_MODE=true
 ```
 
-**PROPHET (.env):**
+**VANGUARD (.env):**
 ```bash
 DERIV_API_TOKEN=your_deriv_token
 USE_DEMO_MODE=true
@@ -1607,7 +1607,7 @@ USE_DEMO_MODE=true
    - Purpose: Automated binary options execution
    - Scope: Read, Trade
 
-### Required for PROPHET
+### Required for VANGUARD
 
 1. **Deriv API Token**
    - Same as AEGIS (can share token)
@@ -1643,7 +1643,7 @@ OVERSEER uses local data from MotiveWave UDP feed.
 **Buffer:** 10K ticks delta
 **Performance:** Sub-millisecond latency
 
-### PROPHET
+### VANGUARD
 
 **Language:** Python 3.8+
 **Platform:** All
@@ -1701,11 +1701,11 @@ PROJECT HELL/
 │   │   └── schemas/
 │   └── src/                     # Web terminal
 │
-├── prophet/                     # Project 3: Deriv Binary System
+├── vanguard/                     # Project 3: Deriv Binary System
 │   ├── main.py
 │   ├── execution/
 │   │   └── deriv_bridge.py
-│   └── prophet_signal/
+│   └── vanguard_signal/
 │
 └── nova/                        # Project 4 & 5: NOVA + AEGIS
     ├── nova_logic/              # Project 4: NOVA
@@ -1853,8 +1853,8 @@ PROJECT HELL/
 **Location:** `PROJECT HELL\nova\aegis_logic\aegis.log`
 **Content:** Absorption detection, gate scores, trade execution
 
-### PROPHET
-**Location:** `PROJECT HELL\prophet\prophet.log`
+### VANGUARD
+**Location:** `PROJECT HELL\vanguard\vanguard.log`
 **Content:** Signal generation, trade execution, results
 
 ---
@@ -1879,7 +1879,7 @@ PROJECT HELL/
 - Stake per trade: $10
 - Automatic execution
 
-### PROPHET
+### VANGUARD
 - Max daily trades: 1
 - Max daily loss: $50
 - Stake per trade: $10
@@ -2071,7 +2071,7 @@ Gateway: Rithmic 01
 **Data Source:** MotiveWave (independent)
 **Benefit:** Mature forex system, 152 gates, MT5 execution
 
-### PROPHET
+### VANGUARD
 **Data Source:** Deriv API (independent)
 **Benefit:** Signal-based binary trading
 
@@ -2204,7 +2204,7 @@ PROJECT HELL/
 │       ├── main.rs              # Now connects to Rithmic directly
 │       └── Cargo.toml
 │
-├── prophet/                     # Independent Binary System
+├── vanguard/                     # Independent Binary System
 │   └── (unchanged)
 │
 └── nova/                        # NOVA + AEGIS (Updated)
@@ -15393,7 +15393,7 @@ PROJECT HELL/
 │       ├── main.rs
 │       └── Cargo.toml
 │
-└── prophet/                     # Deriv trading (existing)
+└── vanguard/                     # Deriv trading (existing)
 ```
 
 ---
@@ -21722,15 +21722,15 @@ MT5_ENABLED = os.getenv("MT5_ENABLED", "false").lower() == "true"
 AUTO_EXECUTE = os.getenv("AUTO_EXECUTE", "true").lower() == "true"
 GATE_EVAL_INTERVAL = int(os.getenv("GATE_EVAL_INTERVAL", "1"))
 AUTORETRAIN_TRADES = int(os.getenv("AUTORETRAIN_TRADES", "50"))
-PROPHET_AUTO_START = os.getenv("PROPHET_AUTO_START", "true").lower() == "true"
-PROPHET_ROOT = Path(os.getenv("PROPHET_ROOT", "/home/jogi999/PROJECT HELL/prophet"))
-PROPHET_PYTHON = os.getenv(
-    "PROPHET_PYTHON",
-    str(PROPHET_ROOT / "venv" / "bin" / "python"),
+VANGUARD_AUTO_START = os.getenv("VANGUARD_AUTO_START", "true").lower() == "true"
+VANGUARD_ROOT = Path(os.getenv("VANGUARD_ROOT", "/home/jogi999/PROJECT HELL/vanguard"))
+VANGUARD_PYTHON = os.getenv(
+    "VANGUARD_PYTHON",
+    str(VANGUARD_ROOT / "venv" / "bin" / "python"),
 )
-PROPHET_CLI = os.getenv(
-    "PROPHET_CLI",
-    str(PROPHET_ROOT / "cli" / "prophet_cli.py"),
+VANGUARD_CLI = os.getenv(
+    "VANGUARD_CLI",
+    str(VANGUARD_ROOT / "cli" / "vanguard_cli.py"),
 )
 VPIN_ENABLED = os.getenv("VPIN_ENABLED", "true").lower() == "true"
 OFI_ENABLED = os.getenv("OFI_ENABLED", "true").lower() == "true"
@@ -24595,62 +24595,62 @@ def _prune_database(conn: sqlite3.Connection) -> None:
         LOGGER.error("System: Pruning failed: %s", e)
 
 
-def _run_prophet_cli(command: str) -> subprocess.CompletedProcess[str]:
+def _run_vanguard_cli(command: str) -> subprocess.CompletedProcess[str]:
     return subprocess.run(
-        [PROPHET_PYTHON, PROPHET_CLI, command],
-        cwd=str(PROPHET_ROOT),
+        [VANGUARD_PYTHON, VANGUARD_CLI, command],
+        cwd=str(VANGUARD_ROOT),
         text=True,
         capture_output=True,
         timeout=30,
     )
 
 
-def _start_prophet_for_overseer() -> bool:
-    if not PROPHET_AUTO_START:
-        LOGGER.info("PROPHET auto-start disabled by PROPHET_AUTO_START=false")
+def _start_vanguard_for_overseer() -> bool:
+    if not VANGUARD_AUTO_START:
+        LOGGER.info("VANGUARD auto-start disabled by VANGUARD_AUTO_START=false")
         return False
 
-    if not Path(PROPHET_PYTHON).exists() or not Path(PROPHET_CLI).exists():
+    if not Path(VANGUARD_PYTHON).exists() or not Path(VANGUARD_CLI).exists():
         LOGGER.warning(
-            "PROPHET auto-start skipped: missing python=%s cli=%s",
-            PROPHET_PYTHON,
-            PROPHET_CLI,
+            "VANGUARD auto-start skipped: missing python=%s cli=%s",
+            VANGUARD_PYTHON,
+            VANGUARD_CLI,
         )
         return False
 
     try:
-        result = _run_prophet_cli("start")
+        result = _run_vanguard_cli("start")
     except Exception as exc:
-        LOGGER.error("PROPHET auto-start failed: %s", exc)
+        LOGGER.error("VANGUARD auto-start failed: %s", exc)
         return False
 
     output = (result.stdout or "") + (result.stderr or "")
     for line in output.splitlines():
-        LOGGER.info("PROPHET start: %s", line)
+        LOGGER.info("VANGUARD start: %s", line)
 
     if result.returncode != 0:
-        LOGGER.error("PROPHET auto-start command failed with code %s", result.returncode)
+        LOGGER.error("VANGUARD auto-start command failed with code %s", result.returncode)
         return False
 
     return "started successfully" in output.lower()
 
 
-def _stop_prophet_for_overseer(started_by_overseer: bool) -> None:
+def _stop_vanguard_for_overseer(started_by_overseer: bool) -> None:
     if not started_by_overseer:
-        LOGGER.info("PROPHET was not started by this OVERSEER run; leaving it untouched.")
+        LOGGER.info("VANGUARD was not started by this OVERSEER run; leaving it untouched.")
         return
 
     try:
-        result = _run_prophet_cli("stop")
+        result = _run_vanguard_cli("stop")
     except Exception as exc:
-        LOGGER.error("PROPHET auto-stop failed: %s", exc)
+        LOGGER.error("VANGUARD auto-stop failed: %s", exc)
         return
 
     output = (result.stdout or "") + (result.stderr or "")
     for line in output.splitlines():
-        LOGGER.info("PROPHET stop: %s", line)
+        LOGGER.info("VANGUARD stop: %s", line)
     if result.returncode != 0:
-        LOGGER.error("PROPHET auto-stop command failed with code %s", result.returncode)
+        LOGGER.error("VANGUARD auto-stop command failed with code %s", result.returncode)
 
 
 def _start_cqg_bridge_for_overseer() -> subprocess.Popen[Any] | None:
@@ -24703,7 +24703,7 @@ async def run() -> None:
     
     while True: # Outer supervisor loop
         LOGGER.info("Starting OVERSEER v12 backend supervisor...")
-        prophet_started_by_overseer = _start_prophet_for_overseer()
+        vanguard_started_by_overseer = _start_vanguard_for_overseer()
         queue: asyncio.Queue = asyncio.Queue(maxsize=100_000)
         l3_queue: asyncio.Queue = asyncio.Queue(maxsize=200_000)
         event_queue: asyncio.Queue = asyncio.Queue()
@@ -24887,7 +24887,7 @@ async def run() -> None:
                 try: dashboard_server.shutdown()
                 except: pass
             shutdown_mt5()
-            _stop_prophet_for_overseer(prophet_started_by_overseer)
+            _stop_vanguard_for_overseer(vanguard_started_by_overseer)
             _stop_cqg_bridge_for_overseer(cqg_proc)
             LOGGER.info("Supervisor cleaned up resources.")
 
@@ -42825,7 +42825,7 @@ class OverseerUdpProtocol(asyncio.DatagramProtocol):
         self._malformed_count: int = 0
         self._rebind_count: int = 0
 
-    def _forward_to_prophet(self, tick: dict[str, Any]) -> None:
+    def _forward_to_vanguard(self, tick: dict[str, Any]) -> None:
         if not self.transport:
             return
         try:
@@ -42844,22 +42844,22 @@ class OverseerUdpProtocol(asyncio.DatagramProtocol):
                 "time": int(tick.get("timestamp", 0)) / 1000.0,
             }
             data = json.dumps(payload).encode("utf-8")
-            self.transport.sendto(data, ("127.0.0.1", 12346)) # PROPHET
+            self.transport.sendto(data, ("127.0.0.1", 12346)) # VANGUARD
             self.transport.sendto(data, ("127.0.0.1", 12347)) # NEXUS
         except Exception as exc:
-            LOGGER.debug("Failed to forward tick to PROPHET: %s", exc)
+            LOGGER.debug("Failed to forward tick to VANGUARD: %s", exc)
 
-    def _forward_l3_to_prophet(self, event: dict[str, Any]) -> None:
+    def _forward_l3_to_vanguard(self, event: dict[str, Any]) -> None:
         if not self.transport:
             return
         try:
             payload = dict(event)
             payload["time"] = int(payload.get("timestamp", 0)) / 1000.0
             data = json.dumps(payload).encode("utf-8")
-            self.transport.sendto(data, ("127.0.0.1", 12346)) # PROPHET
+            self.transport.sendto(data, ("127.0.0.1", 12346)) # VANGUARD
             self.transport.sendto(data, ("127.0.0.1", 12347)) # NEXUS
         except Exception as exc:
-            LOGGER.debug("Failed to forward L3 event to PROPHET: %s", exc)
+            LOGGER.debug("Failed to forward L3 event to VANGUARD: %s", exc)
 
     def connection_made(self, transport: asyncio.BaseTransport) -> None:
         self.transport = transport # type: ignore[assignment]
@@ -42893,7 +42893,7 @@ class OverseerUdpProtocol(asyncio.DatagramProtocol):
                 symbol = parsed.get("symbol", "")
                 cached_dom = self._dom_cache.get(symbol)
                 tick = _motivewave_tick_to_standard(parsed, cached_dom)
-                self._forward_to_prophet(tick)
+                self._forward_to_vanguard(tick)
                 local_ms = int(time.time() * 1000)
                 drift_ms = abs(local_ms - tick["timestamp"])
                 if drift_ms > MAX_CLOCK_DRIFT_MS:
@@ -42915,7 +42915,7 @@ class OverseerUdpProtocol(asyncio.DatagramProtocol):
 
             if category == "motivewave_dom":
                 tick = _motivewave_dom_to_standard(parsed)
-                self._forward_to_prophet(tick)
+                self._forward_to_vanguard(tick)
                 raw_bids = parsed.get("bids", [])
                 raw_asks = parsed.get("asks", [])
                 if raw_bids or raw_asks:
@@ -42941,7 +42941,7 @@ class OverseerUdpProtocol(asyncio.DatagramProtocol):
 
             if category == "motivewave_mbo":
                 mbo_std = _motivewave_mbo_to_standard(parsed)
-                self._forward_l3_to_prophet(mbo_std)
+                self._forward_l3_to_vanguard(mbo_std)
                 if self.l3_queue is not None:
                     try:
                         self.l3_queue.put_nowait(mbo_std)
@@ -42970,7 +42970,7 @@ class OverseerUdpProtocol(asyncio.DatagramProtocol):
 
             if category == "fxcm_dom":
                 tick = _fxcm_dom_to_standard(parsed)
-                self._forward_to_prophet(tick)
+                self._forward_to_vanguard(tick)
                 dom = tick.get("dom", {})
                 if dom.get("bids") or dom.get("asks"):
                     self._dom_cache[tick.get("symbol", "")] = dom
@@ -42984,7 +42984,7 @@ class OverseerUdpProtocol(asyncio.DatagramProtocol):
                 symbol = parsed.get("symbol", "")
                 cached_dom = self._dom_cache.get(symbol)
                 tick = _fxcm_tick_to_standard(parsed, cached_dom)
-                self._forward_to_prophet(tick)
+                self._forward_to_vanguard(tick)
                 local_ms = int(time.time() * 1000)
                 drift_ms = abs(local_ms - tick["timestamp"])
                 if drift_ms > MAX_CLOCK_DRIFT_MS:
@@ -86210,7 +86210,7 @@ conn.close()
 
 ---
 
-## File: prophet\broad_probe.py
+## File: vanguard\broad_probe.py
 
 ```python
 import requests
@@ -86260,7 +86260,7 @@ broad_probe()
 
 ---
 
-## File: prophet\config.py
+## File: vanguard\config.py
 
 ```python
 import os
@@ -86325,8 +86325,8 @@ _TOKEN_PLACEHOLDERS = {"", "$CLEAN_TOKEN", "your_token_here", "your_deriv_token_
 USE_DERIV = DERIV_API_TOKEN not in _TOKEN_PLACEHOLDERS
 
 # ── Logging ────────────────────────────────────────────────────────────────────
-DB_PATH         = "prophet_trades.db"
-LOG_FILE        = "prophet.log"
+DB_PATH         = "vanguard_trades.db"
+LOG_FILE        = "vanguard.log"
 LOG_LEVEL       = "INFO"
 
 # ── Process Resource Limits ────────────────────────────────────────────────────
@@ -86339,7 +86339,7 @@ UDP_HOST        = "127.0.0.1"
 
 ---
 
-## File: prophet\debug_browser.js
+## File: vanguard\debug_browser.js
 
 ```javascript
 const { WebSocketServer } = require('ws');
@@ -86379,7 +86379,7 @@ server.on('connection', async (ws) => {
         // result should have .image which is base64
         if (screenshot && screenshot.image) {
             const base64Data = screenshot.image.replace(/^data:image\/png;base64,/, "");
-            fs.writeFileSync('/home/jogi999/prophet/deriv_debug.png', base64Data, 'base64');
+            fs.writeFileSync('/home/jogi999/vanguard/deriv_debug.png', base64Data, 'base64');
             console.log("SCREENSHOT_SAVED");
         } else {
              console.log("SCREENSHOT_FAILED:" + JSON.stringify(screenshot));
@@ -86395,7 +86395,7 @@ server.on('connection', async (ws) => {
 
 ---
 
-## File: prophet\extract_local.js
+## File: vanguard\extract_local.js
 
 ```javascript
 const { WebSocketServer } = require('ws');
@@ -86444,7 +86444,7 @@ server.on('connection', async (ws) => {
 
 ---
 
-## File: prophet\fetch_deriv_data.js
+## File: vanguard\fetch_deriv_data.js
 
 ```javascript
 const { WebSocketServer } = require('ws');
@@ -86518,7 +86518,7 @@ server.on('connection', async (ws) => {
                     }
                 });
                 
-                nameInput.value = 'Prophet' + Math.floor(Math.random()*1000);
+                nameInput.value = 'Vanguard' + Math.floor(Math.random()*1000);
                 const btns = Array.from(document.querySelectorAll('button'));
                 const createBtn = btns.find(b => b.innerText.includes('Create'));
                 if (createBtn) createBtn.click();
@@ -86551,7 +86551,7 @@ console.log("Waiting for extension on port 9876...");
 
 ---
 
-## File: prophet\fetch_deriv_data_v2.js
+## File: vanguard\fetch_deriv_data_v2.js
 
 ```javascript
 const { WebSocketServer } = require('ws');
@@ -86613,7 +86613,7 @@ server.on('connection', async (ws) => {
 
 ---
 
-## File: prophet\final_probe.py
+## File: vanguard\final_probe.py
 
 ```python
 import requests
@@ -86653,7 +86653,7 @@ final_probe()
 
 ---
 
-## File: prophet\find_vrtc.py
+## File: vanguard\find_vrtc.py
 
 ```python
 import asyncio
@@ -86715,7 +86715,7 @@ if __name__ == "__main__":
 
 ---
 
-## File: prophet\find_vrtc_rest.py
+## File: vanguard\find_vrtc_rest.py
 
 ```python
 import requests
@@ -86776,7 +86776,7 @@ if __name__ == "__main__":
 
 ---
 
-## File: prophet\get_creds.py
+## File: vanguard\get_creds.py
 
 ```python
 # This script will be run by the browser MCP if the tools are not available natively in the prompt
@@ -86786,7 +86786,7 @@ print("Waiting for browser tools...")
 
 ---
 
-## File: prophet\get_text_mcp.js
+## File: vanguard\get_text_mcp.js
 
 ```javascript
 const { WebSocketServer } = require('ws');
@@ -86837,7 +86837,7 @@ server.on('connection', async (ws) => {
 
 ---
 
-## File: prophet\last_clean_test.py
+## File: vanguard\last_clean_test.py
 
 ```python
 import asyncio
@@ -86865,7 +86865,7 @@ asyncio.run(test())
 
 ---
 
-## File: prophet\last_rest_test.py
+## File: vanguard\last_rest_test.py
 
 ```python
 import requests
@@ -86891,7 +86891,7 @@ test_rest()
 
 ---
 
-## File: prophet\last_try.js
+## File: vanguard\last_try.js
 
 ```javascript
 const { WebSocketServer } = require('ws');
@@ -86941,11 +86941,11 @@ server.on('connection', async (ws) => {
 
 ---
 
-## File: prophet\main_deriv.py
+## File: vanguard\main_deriv.py
 
 ```python
 """
-PROPHET — 5-Minute Binary Direction Engine (90% Win Rate)
+VANGUARD — 5-Minute Binary Direction Engine (90% Win Rate)
 Auto-execution on Deriv via WebSocket using CME Level 3 data
 
 Usage:
@@ -86960,7 +86960,7 @@ from rich.panel import Panel
 
 from data.cme_feed import CMELevel3Feed
 from data.models import Candle
-from prophet_signal.aggregator_90 import generate_signal_90
+from vanguard_signal.aggregator_90 import generate_signal_90
 from execution.deriv_bridge import DerivBridge
 from risk.manager import RiskManager
 from utils.logger import get_logger, TradeLogger
@@ -86973,7 +86973,7 @@ from config import (
     USE_DERIV,
 )
 
-log     = get_logger("PROPHET")
+log     = get_logger("VANGUARD")
 console = Console()
 
 
@@ -86983,7 +86983,7 @@ async def main():
         console.print("[yellow]Add a valid DERIV_API_TOKEN to .env to enable auto-execution.[/yellow]")
 
     console.print(Panel.fit(
-        "[bold cyan]PROPHET v2.0 - Strict Binary Direction Engine[/bold cyan]\n"
+        "[bold cyan]VANGUARD v2.0 - Strict Binary Direction Engine[/bold cyan]\n"
         "15-Minute Candle/Expiry with High-Quality Filter Stack\n"
         f"Asset: [yellow]{ASSET}[/yellow] | "
         f"Mode: [{'green' if DEMO_MODE else 'red'}]{'DEMO' if DEMO_MODE else '⚠ LIVE'}[/]",
@@ -87080,13 +87080,13 @@ if __name__ == "__main__":
     try:
         asyncio.run(main())
     except KeyboardInterrupt:
-        console.print("\n[yellow]PROPHET stopped.[/yellow]")
+        console.print("\n[yellow]VANGUARD stopped.[/yellow]")
 
 ```
 
 ---
 
-## File: prophet\master_probe.py
+## File: vanguard\master_probe.py
 
 ```python
 import asyncio
@@ -87135,7 +87135,7 @@ async def master_probe():
                             vrtc_id = acc['loginid']
                 
                 final_id = vrtc_id if vrtc_id else main_acc
-                print(f"\nFinal Selection for PROPHET: {final_id}")
+                print(f"\nFinal Selection for VANGUARD: {final_id}")
                 
                 # Update .env
                 with open(".env", "r") as f:
@@ -87169,7 +87169,7 @@ if __name__ == "__main__":
 
 ---
 
-## File: prophet\mcp_control.py
+## File: vanguard\mcp_control.py
 
 ```python
 import asyncio
@@ -87238,7 +87238,7 @@ async def control_browser():
                     if (!cb.checked) cb.click();
                 });
                 
-                nameInput.value = 'Prophet' + Math.floor(Math.random()*1000);
+                nameInput.value = 'Vanguard' + Math.floor(Math.random()*1000);
                 const btns = Array.from(document.querySelectorAll('button'));
                 const createBtn = btns.find(b => b.innerText.includes('Create'));
                 if (createBtn) createBtn.click();
@@ -87267,7 +87267,7 @@ if __name__ == "__main__":
 
 ---
 
-## File: prophet\probe_api.py
+## File: vanguard\probe_api.py
 
 ```python
 import requests
@@ -87316,7 +87316,7 @@ probe()
 
 ---
 
-## File: prophet\requirements.txt
+## File: vanguard\requirements.txt
 
 ```text
 websockets==12.0
@@ -87331,7 +87331,7 @@ psutil==5.9.8
 
 ---
 
-## File: prophet\scrape_deriv.js
+## File: vanguard\scrape_deriv.js
 
 ```javascript
 const puppeteer = require('puppeteer-core');
@@ -87387,7 +87387,7 @@ const fs = require('fs');
         });
         
         // Enter name
-        await page.type('input[placeholder="Token name"]', 'Prophet100');
+        await page.type('input[placeholder="Token name"]', 'Vanguard100');
         await page.click('button[type="submit"]'); // Assuming Create button
         
         await page.waitForTimeout(3000); // Wait for API
@@ -87412,7 +87412,7 @@ const fs = require('fs');
 
 ---
 
-## File: prophet\step1_mcp.js
+## File: vanguard\step1_mcp.js
 
 ```javascript
 const { WebSocketServer } = require('ws');
@@ -87457,7 +87457,7 @@ server.on('connection', async (ws) => {
         console.log("2. Taking screenshot of Trading page...");
         const screenshot = await send(ws, 'screenshot', {});
         if (screenshot && screenshot.image) {
-            fs.writeFileSync('/home/jogi999/prophet/deriv_trading.png', screenshot.image.replace(/^data:image\/png;base64,/, ""), 'base64');
+            fs.writeFileSync('/home/jogi999/vanguard/deriv_trading.png', screenshot.image.replace(/^data:image\/png;base64,/, ""), 'base64');
         }
 
         console.log("3. Extracting Account ID...");
@@ -87482,7 +87482,7 @@ server.on('connection', async (ws) => {
 
 ---
 
-## File: prophet\test_api.py
+## File: vanguard\test_api.py
 
 ```python
 import asyncio
@@ -87519,7 +87519,7 @@ async def test_deriv():
             account = auth_resp['authorize']
             print(f"✅ Auth Success! Account: {account['loginid']} | Balance: {account['balance']} {account['currency']}")
             
-            # 2. Test 5-Minute Proposal (What PROPHET actually does)
+            # 2. Test 5-Minute Proposal (What VANGUARD actually does)
             print("\n📈 Requesting test 5-Minute CALL proposal on frxEURUSD...")
             proposal_msg = {
                 "proposal": 1,
@@ -87554,7 +87554,7 @@ if __name__ == "__main__":
 
 ---
 
-## File: prophet\test_api_v2.py
+## File: vanguard\test_api_v2.py
 
 ```python
 import asyncio
@@ -87602,7 +87602,7 @@ if __name__ == "__main__":
 
 ---
 
-## File: prophet\test_otp.py
+## File: vanguard\test_otp.py
 
 ```python
 import requests
@@ -87632,7 +87632,7 @@ except Exception as e:
 
 ---
 
-## File: prophet\test_pat.py
+## File: vanguard\test_pat.py
 
 ```python
 import asyncio
@@ -87672,7 +87672,7 @@ asyncio.run(test())
 
 ---
 
-## File: prophet\test_pat_v4.py
+## File: vanguard\test_pat_v4.py
 
 ```python
 import asyncio
@@ -87709,7 +87709,7 @@ asyncio.run(test())
 
 ---
 
-## File: prophet\test_pat_v5.py
+## File: vanguard\test_pat_v5.py
 
 ```python
 import asyncio
@@ -87739,7 +87739,7 @@ asyncio.run(test())
 
 ---
 
-## File: prophet\test_rest.py
+## File: vanguard\test_rest.py
 
 ```python
 import requests
@@ -87775,7 +87775,7 @@ for url in urls:
 
 ---
 
-## File: prophet\test_rest2.py
+## File: vanguard\test_rest2.py
 
 ```python
 import requests
@@ -87812,15 +87812,15 @@ for url in urls:
 
 ---
 
-## File: prophet\cli\check_prophet.py
+## File: vanguard\cli\check_vanguard.py
 
 ```python
 #!/usr/bin/env python3
 """
-PROPHET CLI — Check Trading Status
+VANGUARD CLI — Check Trading Status
 
 Usage:
-    python check_prophet.py
+    python check_vanguard.py
 """
 
 import sys
@@ -87834,8 +87834,8 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from config import DB_PATH
 
 
-def find_prophet_processes():
-    """Find all PROPHET processes."""
+def find_vanguard_processes():
+    """Find all VANGUARD processes."""
     processes = []
     for proc in psutil.process_iter(['pid', 'name', 'cmdline', 'cpu_percent', 'memory_info']):
         try:
@@ -87858,7 +87858,7 @@ def get_trade_stats():
         today = datetime.date.today().isoformat()
         cursor.execute("""
             SELECT result, profit
-            FROM prophet_trades
+            FROM vanguard_trades
             WHERE DATE(timestamp) = ?
         """, (today,))
         trades = cursor.fetchall()
@@ -87872,7 +87872,7 @@ def get_trade_stats():
         # Get recent signals
         cursor.execute("""
             SELECT direction, reason
-            FROM prophet_signals
+            FROM vanguard_signals
             ORDER BY timestamp DESC
             LIMIT 5
         """)
@@ -87892,19 +87892,19 @@ def get_trade_stats():
         return None
 
 
-def check_prophet_status():
-    """Check PROPHET trading status."""
-    print("📊 PROPHET Status Check")
+def check_vanguard_status():
+    """Check VANGUARD trading status."""
+    print("📊 VANGUARD Status Check")
     print("=" * 50)
 
-    processes = find_prophet_processes()
+    processes = find_vanguard_processes()
 
     if not processes:
-        print("❌ PROPHET is NOT running")
-        print("   Start with: prophet_cli.py start")
+        print("❌ VANGUARD is NOT running")
+        print("   Start with: vanguard_cli.py start")
         return
 
-    print(f"✅ PROPHET is running ({len(processes)} process(es))")
+    print(f"✅ VANGUARD is running ({len(processes)} process(es))")
     print()
 
     for proc in processes:
@@ -87936,28 +87936,28 @@ def check_prophet_status():
         print("⚠️  No trading data available yet")
         print()
 
-    print("💡 Use 'prophet_cli.py logs' to view detailed logs")
+    print("💡 Use 'vanguard_cli.py logs' to view detailed logs")
 
 
 if __name__ == "__main__":
-    check_prophet_status()
+    check_vanguard_status()
 
 ```
 
 ---
 
-## File: prophet\cli\prophet_cli.py
+## File: vanguard\cli\vanguard_cli.py
 
 ```python
 #!/usr/bin/env python3
 """
-PROPHET CLI — Unified Command Interface
+VANGUARD CLI — Unified Command Interface
 
 Usage:
-    python prophet_cli.py start    — Start PROPHET background process
-    python prophet_cli.py stop     — Stop PROPHET background process
-    python prophet_cli.py status   — Check PROPHET trading status
-    python prophet_cli.py logs     — View PROPHET logs
+    python vanguard_cli.py start    — Start VANGUARD background process
+    python vanguard_cli.py stop     — Stop VANGUARD background process
+    python vanguard_cli.py status   — Check VANGUARD trading status
+    python vanguard_cli.py logs     — View VANGUARD logs
 """
 
 import sys
@@ -87965,15 +87965,15 @@ import os
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from cli.start_prophet import start_prophet
-from cli.stop_prophet import stop_prophet
-from cli.check_prophet import check_prophet_status
+from cli.start_vanguard import start_vanguard
+from cli.stop_vanguard import stop_vanguard
+from cli.check_vanguard import check_vanguard_status
 
 
 def show_logs():
-    log_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'prophet.log')
+    log_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'vanguard.log')
     if not os.path.exists(log_path):
-        print("No prophet.log file found yet")
+        print("No vanguard.log file found yet")
         return
     with open(log_path, 'r', encoding='utf-8', errors='replace') as f:
         lines = f.readlines()[-80:]
@@ -87982,19 +87982,19 @@ def show_logs():
 
 def print_help():
     print("""
-PROPHET CLI — Unified Command Interface
+VANGUARD CLI — Unified Command Interface
 
 Commands:
-    start    — Start PROPHET background process
-    stop     — Stop PROPHET background process
-    status   — Check PROPHET trading status
-    logs     — View PROPHET logs
+    start    — Start VANGUARD background process
+    stop     — Stop VANGUARD background process
+    status   — Check VANGUARD trading status
+    logs     — View VANGUARD logs
     help     — Show this help message
 
 Example:
-    python prophet_cli.py start
-    python prophet_cli.py status
-    python prophet_cli.py stop
+    python vanguard_cli.py start
+    python vanguard_cli.py status
+    python vanguard_cli.py stop
     """)
 
 
@@ -88006,11 +88006,11 @@ def main():
     command = sys.argv[1].lower()
 
     if command == "start":
-        start_prophet()
+        start_vanguard()
     elif command == "stop":
-        stop_prophet()
+        stop_vanguard()
     elif command == "status":
-        check_prophet_status()
+        check_vanguard_status()
     elif command == "logs":
         show_logs()
     elif command == "help":
@@ -88027,15 +88027,15 @@ if __name__ == "__main__":
 
 ---
 
-## File: prophet\cli\start_prophet.py
+## File: vanguard\cli\start_vanguard.py
 
 ```python
 #!/usr/bin/env python3
 """
-PROPHET CLI — Start Background Process
+VANGUARD CLI — Start Background Process
 
 Usage:
-    python start_prophet.py
+    python start_vanguard.py
 """
 
 import sys
@@ -88048,8 +88048,8 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from config import MAX_MEMORY_MB, MAX_CPU_PERCENT
 
 
-def is_prophet_running():
-    """Check if PROPHET process is already running."""
+def is_vanguard_running():
+    """Check if VANGUARD process is already running."""
     for proc in psutil.process_iter(['pid', 'name', 'cmdline']):
         try:
             if 'python' in proc.info['name'].lower():
@@ -88061,14 +88061,14 @@ def is_prophet_running():
     return False, None
 
 
-def start_prophet():
-    """Start PROPHET in background with resource limits."""
-    print("🚀 Starting PROPHET...")
+def start_vanguard():
+    """Start VANGUARD in background with resource limits."""
+    print("🚀 Starting VANGUARD...")
 
-    running, pid = is_prophet_running()
+    running, pid = is_vanguard_running()
     if running:
-        print(f"⚠️  PROPHET is already running (PID: {pid})")
-        print("Use 'prophet_cli.py stop' to stop it first.")
+        print(f"⚠️  VANGUARD is already running (PID: {pid})")
+        print("Use 'vanguard_cli.py stop' to stop it first.")
         return
 
     try:
@@ -88080,7 +88080,7 @@ def start_prophet():
             return
 
         project_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-        log_path = os.path.join(project_dir, 'prophet.log')
+        log_path = os.path.join(project_dir, 'vanguard.log')
 
         # Create process with resource limits. Keep cwd in the project so .env/db/log paths resolve correctly.
         log_file = open(log_path, 'a', encoding='utf-8')
@@ -88097,37 +88097,37 @@ def start_prophet():
         # Set resource limits
         try:
             p = psutil.Process(process.pid)
-            # Give maximum priority to PROPHET for HFT speed
+            # Give maximum priority to VANGUARD for HFT speed
             if hasattr(p, 'nice'):
                 p.nice(-10)  # High priority (requires sudo, but will just ignore if unprivileged)
         except (psutil.NoSuchProcess, psutil.AccessDenied):
             pass
 
-        print(f"✅ PROPHET started successfully (PID: {process.pid})")
+        print(f"✅ VANGUARD started successfully (PID: {process.pid})")
         print(f"   Running with UNLIMITED RESOURCES (HFT Mode)")
-        print("   Use 'prophet_cli.py status' to check status")
-        print("   Use 'prophet_cli.py logs' to view logs")
+        print("   Use 'vanguard_cli.py status' to check status")
+        print("   Use 'vanguard_cli.py logs' to view logs")
 
     except Exception as e:
-        print(f"❌ Failed to start PROPHET: {e}")
+        print(f"❌ Failed to start VANGUARD: {e}")
 
 
 if __name__ == "__main__":
-    start_prophet()
+    start_vanguard()
 
 ```
 
 ---
 
-## File: prophet\cli\stop_prophet.py
+## File: vanguard\cli\stop_vanguard.py
 
 ```python
 #!/usr/bin/env python3
 """
-PROPHET CLI — Stop Background Process
+VANGUARD CLI — Stop Background Process
 
 Usage:
-    python stop_prophet.py
+    python stop_vanguard.py
 """
 
 import sys
@@ -88137,8 +88137,8 @@ import psutil
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 
-def find_prophet_processes():
-    """Find all PROPHET processes."""
+def find_vanguard_processes():
+    """Find all VANGUARD processes."""
     processes = []
     for proc in psutil.process_iter(['pid', 'name', 'cmdline']):
         try:
@@ -88151,14 +88151,14 @@ def find_prophet_processes():
     return processes
 
 
-def stop_prophet():
-    """Stop PROPHET background processes."""
-    print("🛑 Stopping PROPHET...")
+def stop_vanguard():
+    """Stop VANGUARD background processes."""
+    print("🛑 Stopping VANGUARD...")
 
-    processes = find_prophet_processes()
+    processes = find_vanguard_processes()
 
     if not processes:
-        print("✅ PROPHET is not running")
+        print("✅ VANGUARD is not running")
         return
 
     stopped_count = 0
@@ -88176,17 +88176,17 @@ def stop_prophet():
             except:
                 pass
 
-    print(f"✅ Stopped {stopped_count} PROPHET process(es)")
+    print(f"✅ Stopped {stopped_count} VANGUARD process(es)")
 
 
 if __name__ == "__main__":
-    stop_prophet()
+    stop_vanguard()
 
 ```
 
 ---
 
-## File: prophet\data\cme_feed.py
+## File: vanguard\data\cme_feed.py
 
 ```python
 """
@@ -88563,7 +88563,7 @@ class L3OrderFlowAnalyzer:
 
 ---
 
-## File: prophet\data\models.py
+## File: vanguard\data\models.py
 
 ```python
 from dataclasses import dataclass
@@ -88645,7 +88645,7 @@ class TradeRecord:
 
 ---
 
-## File: prophet\execution\deriv_bridge.py
+## File: vanguard\execution\deriv_bridge.py
 
 ```python
 import asyncio
@@ -88800,7 +88800,7 @@ class DerivBridge:
 
     async def place_trade(self, signal: SignalResult) -> Optional[TradeRecord]:
         """
-        Places a 5-minute binary contract based on PROPHET signal.
+        Places a 5-minute binary contract based on VANGUARD signal.
         Returns TradeRecord with contract_id.
         """
         if not self.connected or signal.direction is None:
@@ -88903,7 +88903,7 @@ class DerivBridge:
 
 ---
 
-## File: prophet\prophet_signal\aggregator_90.py
+## File: vanguard\vanguard_signal\aggregator_90.py
 
 ```python
 from __future__ import annotations
@@ -88912,10 +88912,10 @@ from datetime import datetime, time
 from typing import List, Optional
 import pytz
 from data.models import Candle, SignalResult
-from prophet_signal.volume_profile import calculate_volume_profile
-from prophet_signal.cvd import get_cvd_divergence, is_cvd_reversing, calculate_cvd
-from prophet_signal.zscore import is_volume_spike
-from prophet_signal.level_detector import is_at_key_level
+from vanguard_signal.volume_profile import calculate_volume_profile
+from vanguard_signal.cvd import get_cvd_divergence, is_cvd_reversing, calculate_cvd
+from vanguard_signal.zscore import is_volume_spike
+from vanguard_signal.level_detector import is_at_key_level
 from config import (
     ICEBERG_RELOAD_MIN,
     MIN_CANDLES_FOR_SIGNAL,
@@ -89302,7 +89302,7 @@ def _no_trade_90(
 
 ---
 
-## File: prophet\prophet_signal\cvd.py
+## File: vanguard\vanguard_signal\cvd.py
 
 ```python
 from __future__ import annotations
@@ -89372,7 +89372,7 @@ def is_cvd_reversing(candles: List[Candle], lookback: int = 5) -> bool:
 
 ---
 
-## File: prophet\prophet_signal\level_detector.py
+## File: vanguard\vanguard_signal\level_detector.py
 
 ```python
 from __future__ import annotations
@@ -89430,7 +89430,7 @@ def is_at_key_level(
 
 ---
 
-## File: prophet\prophet_signal\volume_profile.py
+## File: vanguard\vanguard_signal\volume_profile.py
 
 ```python
 from __future__ import annotations
@@ -89503,7 +89503,7 @@ def calculate_volume_profile(candles: List[Candle], bins: int = 50) -> VolumePro
 
 ---
 
-## File: prophet\prophet_signal\zscore.py
+## File: vanguard\vanguard_signal\zscore.py
 
 ```python
 from __future__ import annotations
@@ -89544,7 +89544,7 @@ def is_volume_spike(candles: List[Candle], window: int = 20) -> tuple[bool, floa
 
 ---
 
-## File: prophet\prophet_signal\__init__.py
+## File: vanguard\vanguard_signal\__init__.py
 
 ```python
 
@@ -89552,7 +89552,7 @@ def is_volume_spike(candles: List[Candle], window: int = 20) -> tuple[bool, floa
 
 ---
 
-## File: prophet\risk\manager.py
+## File: vanguard\risk\manager.py
 
 ```python
 from __future__ import annotations
@@ -89632,7 +89632,7 @@ class RiskManager:
 
 ---
 
-## File: prophet\utils\logger.py
+## File: vanguard\utils\logger.py
 
 ```python
 import logging
@@ -89661,7 +89661,7 @@ class TradeLogger:
 
     def _create_tables(self):
         self.conn.executescript("""
-            CREATE TABLE IF NOT EXISTS prophet_signals (
+            CREATE TABLE IF NOT EXISTS vanguard_signals (
                 id              INTEGER PRIMARY KEY AUTOINCREMENT,
                 timestamp       TEXT,
                 asset           TEXT,
@@ -89678,7 +89678,7 @@ class TradeLogger:
                 reason          TEXT
             );
 
-            CREATE TABLE IF NOT EXISTS prophet_trades (
+            CREATE TABLE IF NOT EXISTS vanguard_trades (
                 id              INTEGER PRIMARY KEY AUTOINCREMENT,
                 timestamp       TEXT,
                 asset           TEXT,
@@ -89690,14 +89690,14 @@ class TradeLogger:
                 profit          REAL,
                 demo            INTEGER,
                 signal_id       INTEGER,
-                FOREIGN KEY(signal_id) REFERENCES prophet_signals(id)
+                FOREIGN KEY(signal_id) REFERENCES vanguard_signals(id)
             );
         """)
         self.conn.commit()
 
     def log_signal(self, signal) -> int:
         cur = self.conn.execute("""
-            INSERT INTO prophet_signals
+            INSERT INTO vanguard_signals
                 (timestamp, asset, direction, confidence, at_key_level,
                  key_level_type, current_price, cvd_value, volume_zscore,
                  phase1_pass, phase2_pass, phase3_pass, reason)
@@ -89722,7 +89722,7 @@ class TradeLogger:
 
     def log_trade(self, trade, signal_id: int):
         self.conn.execute("""
-            INSERT INTO prophet_trades
+            INSERT INTO vanguard_trades
                 (timestamp, asset, direction, stake, duration,
                  broker_trade_id, result, profit, demo, signal_id)
             VALUES (?,?,?,?,?,?,?,?,?,?)
@@ -89744,7 +89744,7 @@ class TradeLogger:
 
 ---
 
-## File: prophet\venv\bin\Activate.ps1
+## File: vanguard\venv\bin\Activate.ps1
 
 ```powershell
 <#

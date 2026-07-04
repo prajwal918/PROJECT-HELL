@@ -4,10 +4,10 @@ from datetime import datetime, time
 from typing import List, Optional
 import pytz
 from data.models import Candle, SignalResult
-from prophet_signal.volume_profile import calculate_volume_profile
-from prophet_signal.cvd import get_cvd_divergence, is_cvd_reversing, calculate_cvd
-from prophet_signal.zscore import is_volume_spike
-from prophet_signal.level_detector import is_at_key_level
+from vanguard_signal.volume_profile import calculate_volume_profile
+from vanguard_signal.cvd import get_cvd_divergence, is_cvd_reversing, calculate_cvd
+from vanguard_signal.zscore import is_volume_spike
+from vanguard_signal.level_detector import is_at_key_level
 from config import (
     ICEBERG_RELOAD_MIN,
     MIN_CANDLES_FOR_SIGNAL,

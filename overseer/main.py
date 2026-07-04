@@ -192,15 +192,15 @@ MT5_ENABLED = os.getenv("MT5_ENABLED", "false").lower() == "true"
 AUTO_EXECUTE = os.getenv("AUTO_EXECUTE", "true").lower() == "true"
 GATE_EVAL_INTERVAL = int(os.getenv("GATE_EVAL_INTERVAL", "1"))
 AUTORETRAIN_TRADES = int(os.getenv("AUTORETRAIN_TRADES", "50"))
-PROPHET_AUTO_START = os.getenv("PROPHET_AUTO_START", "true").lower() == "true"
-PROPHET_ROOT = Path(os.getenv("PROPHET_ROOT", "/home/jogi999/PROJECT HELL/prophet"))
-PROPHET_PYTHON = os.getenv(
-    "PROPHET_PYTHON",
-    str(PROPHET_ROOT / "venv" / "bin" / "python"),
+VANGUARD_AUTO_START = os.getenv("VANGUARD_AUTO_START", "true").lower() == "true"
+VANGUARD_ROOT = Path(os.getenv("VANGUARD_ROOT", "/home/jogi999/PROJECT HELL/vanguard"))
+VANGUARD_PYTHON = os.getenv(
+    "VANGUARD_PYTHON",
+    str(VANGUARD_ROOT / "venv" / "bin" / "python"),
 )
-PROPHET_CLI = os.getenv(
-    "PROPHET_CLI",
-    str(PROPHET_ROOT / "cli" / "prophet_cli.py"),
+VANGUARD_CLI = os.getenv(
+    "VANGUARD_CLI",
+    str(VANGUARD_ROOT / "cli" / "vanguard_cli.py"),
 )
 VPIN_ENABLED = os.getenv("VPIN_ENABLED", "true").lower() == "true"
 OFI_ENABLED = os.getenv("OFI_ENABLED", "true").lower() == "true"
@@ -3065,62 +3065,62 @@ def _prune_database(conn: sqlite3.Connection) -> None:
         LOGGER.error("System: Pruning failed: %s", e)
 
 
-def _run_prophet_cli(command: str) -> subprocess.CompletedProcess[str]:
+def _run_vanguard_cli(command: str) -> subprocess.CompletedProcess[str]:
     return subprocess.run(
-        [PROPHET_PYTHON, PROPHET_CLI, command],
-        cwd=str(PROPHET_ROOT),
+        [VANGUARD_PYTHON, VANGUARD_CLI, command],
+        cwd=str(VANGUARD_ROOT),
         text=True,
         capture_output=True,
         timeout=30,
     )
 
 
-def _start_prophet_for_overseer() -> bool:
-    if not PROPHET_AUTO_START:
-        LOGGER.info("PROPHET auto-start disabled by PROPHET_AUTO_START=false")
+def _start_vanguard_for_overseer() -> bool:
+    if not VANGUARD_AUTO_START:
+        LOGGER.info("VANGUARD auto-start disabled by VANGUARD_AUTO_START=false")
         return False
 
-    if not Path(PROPHET_PYTHON).exists() or not Path(PROPHET_CLI).exists():
+    if not Path(VANGUARD_PYTHON).exists() or not Path(VANGUARD_CLI).exists():
         LOGGER.warning(
-            "PROPHET auto-start skipped: missing python=%s cli=%s",
-            PROPHET_PYTHON,
-            PROPHET_CLI,
+            "VANGUARD auto-start skipped: missing python=%s cli=%s",
+            VANGUARD_PYTHON,
+            VANGUARD_CLI,
         )
         return False
 
     try:
-        result = _run_prophet_cli("start")
+        result = _run_vanguard_cli("start")
     except Exception as exc:
-        LOGGER.error("PROPHET auto-start failed: %s", exc)
+        LOGGER.error("VANGUARD auto-start failed: %s", exc)
         return False
 
     output = (result.stdout or "") + (result.stderr or "")
     for line in output.splitlines():
-        LOGGER.info("PROPHET start: %s", line)
+        LOGGER.info("VANGUARD start: %s", line)
 
     if result.returncode != 0:
-        LOGGER.error("PROPHET auto-start command failed with code %s", result.returncode)
+        LOGGER.error("VANGUARD auto-start command failed with code %s", result.returncode)
         return False
 
     return "started successfully" in output.lower()
 
 
-def _stop_prophet_for_overseer(started_by_overseer: bool) -> None:
+def _stop_vanguard_for_overseer(started_by_overseer: bool) -> None:
     if not started_by_overseer:
-        LOGGER.info("PROPHET was not started by this OVERSEER run; leaving it untouched.")
+        LOGGER.info("VANGUARD was not started by this OVERSEER run; leaving it untouched.")
         return
 
     try:
-        result = _run_prophet_cli("stop")
+        result = _run_vanguard_cli("stop")
     except Exception as exc:
-        LOGGER.error("PROPHET auto-stop failed: %s", exc)
+        LOGGER.error("VANGUARD auto-stop failed: %s", exc)
         return
 
     output = (result.stdout or "") + (result.stderr or "")
     for line in output.splitlines():
-        LOGGER.info("PROPHET stop: %s", line)
+        LOGGER.info("VANGUARD stop: %s", line)
     if result.returncode != 0:
-        LOGGER.error("PROPHET auto-stop command failed with code %s", result.returncode)
+        LOGGER.error("VANGUARD auto-stop command failed with code %s", result.returncode)
 
 
 def _start_cqg_bridge_for_overseer() -> subprocess.Popen[Any] | None:
@@ -3173,7 +3173,7 @@ async def run() -> None:
     
     while True: # Outer supervisor loop
         LOGGER.info("Starting OVERSEER v12 backend supervisor...")
-        prophet_started_by_overseer = _start_prophet_for_overseer()
+        vanguard_started_by_overseer = _start_vanguard_for_overseer()
         queue: asyncio.Queue = asyncio.Queue(maxsize=100_000)
         l3_queue: asyncio.Queue = asyncio.Queue(maxsize=200_000)
         event_queue: asyncio.Queue = asyncio.Queue()
@@ -3357,7 +3357,7 @@ async def run() -> None:
                 try: dashboard_server.shutdown()
                 except: pass
             shutdown_mt5()
-            _stop_prophet_for_overseer(prophet_started_by_overseer)
+            _stop_vanguard_for_overseer(vanguard_started_by_overseer)
             _stop_cqg_bridge_for_overseer(cqg_proc)
             LOGGER.info("Supervisor cleaned up resources.")
 

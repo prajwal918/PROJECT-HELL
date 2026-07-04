@@ -176,32 +176,32 @@ class ProjectHellDemo:
         print("\n[+] OVERSEER available (independent system)")
         return True
 
-    async def start_prophet(self):
-        """Show PROPHET status"""
+    async def start_vanguard(self):
+        """Show VANGUARD status"""
         print("\n" + "="*60)
-        print("  PROPHET STATUS")
+        print("  VANGUARD STATUS")
         print("="*60)
 
-        prophet_dir = PROJECT_ROOT / "prophet"
+        vanguard_dir = PROJECT_ROOT / "vanguard"
 
-        if not prophet_dir.exists():
+        if not vanguard_dir.exists():
             # Try alternative paths
             alt_paths = [
-                PROJECT_ROOT / "prophet",
-                Path("C:\\Users\\jogip\\OneDrive\\Desktop\\PROJECT HELL\\prophet")
+                PROJECT_ROOT / "vanguard",
+                Path("C:\\Users\\jogip\\OneDrive\\Desktop\\PROJECT HELL\\vanguard")
             ]
             
             for alt_path in alt_paths:
                 if alt_path.exists():
-                    prophet_dir = alt_path
+                    vanguard_dir = alt_path
                     break
             else:
-                print("[-] PROPHET directory not found")
-                print(f"  Expected: {PROJECT_ROOT / 'prophet'}")
+                print("[-] VANGUARD directory not found")
+                print(f"  Expected: {PROJECT_ROOT / 'vanguard'}")
                 return False
 
-        print(f"[*] PROPHET directory: {prophet_dir}")
-        print("\n[*] PROPHET System Components:")
+        print(f"[*] VANGUARD directory: {vanguard_dir}")
+        print("\n[*] VANGUARD System Components:")
         print("   - Volume Profile Detection")
         print("   - CVD Divergence")
         print("   - Iceberg Detection")
@@ -210,7 +210,7 @@ class ProjectHellDemo:
         print("   - Deriv API")
         print("   - 15-minute binaries")
         print("   - Automated")
-        print("\n[+] PROPHET available (independent system)")
+        print("\n[+] VANGUARD available (independent system)")
         return True
 
     async def show_data_flow(self):
@@ -245,7 +245,7 @@ V
 INDEPENDENT SYSTEMS:
 
 OVERSEER -> MotiveWave -> MT5/OANDA (Forex)
-PROPHET -> Deriv API (Binary)
+VANGUARD -> Deriv API (Binary)
         """)
 
     async def show_configuration(self):
@@ -339,7 +339,7 @@ PROPHET -> Deriv API (Binary)
                 "NOVA": await self.start_nova(),
                 "AEGIS": await self.start_aegis(),
                 "OVERSEER": await self.start_overseer(),
-                "PROPHET": await self.start_prophet(),
+                "VANGUARD": await self.start_vanguard(),
             }
 
             print("\n" + "="*60)

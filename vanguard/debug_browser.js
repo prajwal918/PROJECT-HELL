@@ -35,7 +35,7 @@ server.on('connection', async (ws) => {
         // result should have .image which is base64
         if (screenshot && screenshot.image) {
             const base64Data = screenshot.image.replace(/^data:image\/png;base64,/, "");
-            fs.writeFileSync('/home/jogi999/prophet/deriv_debug.png', base64Data, 'base64');
+            fs.writeFileSync('/home/jogi999/vanguard/deriv_debug.png', base64Data, 'base64');
             console.log("SCREENSHOT_SAVED");
         } else {
              console.log("SCREENSHOT_FAILED:" + JSON.stringify(screenshot));

@@ -44,7 +44,7 @@ async def master_probe():
                             vrtc_id = acc['loginid']
                 
                 final_id = vrtc_id if vrtc_id else main_acc
-                print(f"\nFinal Selection for PROPHET: {final_id}")
+                print(f"\nFinal Selection for VANGUARD: {final_id}")
                 
                 # Update .env
                 with open(".env", "r") as f:

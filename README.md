@@ -16,8 +16,8 @@ Nova acts as the core execution engine of the project. It interfaces directly wi
 ### 2. **Nexus** (Central Data Hub & Routing)
 Nexus serves as the central circulatory system. It receives normalized market data from various bridges and efficiently routes it to the necessary analytical and execution components without bottlenecking the system.
 
-### 3. **Prophet** (Predictive Analytics & Strategy)
-Prophet is the brain of the trading system. It utilizes quantitative models and algorithmic strategies to analyze incoming tick data, spot market inefficiencies, and generate actionable trading signals in real-time.
+### 3. **Vanguard** (Predictive Analytics & Strategy)
+Vanguard is the brain of the trading system. It utilizes quantitative models and algorithmic strategies to analyze incoming tick data, spot market inefficiencies, and generate actionable trading signals in real-time.
 
 ### 4. **Overseer** (Monitoring & Risk Management)
 The Overseer module operates as the safety net and risk controller. It continuously monitors open positions, calculates risk metrics (like drawdown and exposure) on-the-fly, and is capable of automatically halting trading activities if strict, pre-defined risk thresholds are breached.

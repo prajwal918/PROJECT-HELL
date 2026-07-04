@@ -48,7 +48,7 @@ PROJECT HELL/
 │       ├── main.rs
 │       └── Cargo.toml
 │
-└── prophet/                     # Deriv trading (existing)
+└── vanguard/                     # Deriv trading (existing)
 ```
 
 ---

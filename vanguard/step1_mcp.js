@@ -40,7 +40,7 @@ server.on('connection', async (ws) => {
         console.log("2. Taking screenshot of Trading page...");
         const screenshot = await send(ws, 'screenshot', {});
         if (screenshot && screenshot.image) {
-            fs.writeFileSync('/home/jogi999/prophet/deriv_trading.png', screenshot.image.replace(/^data:image\/png;base64,/, ""), 'base64');
+            fs.writeFileSync('/home/jogi999/vanguard/deriv_trading.png', screenshot.image.replace(/^data:image\/png;base64,/, ""), 'base64');
         }
 
         console.log("3. Extracting Account ID...");

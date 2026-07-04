@@ -150,7 +150,7 @@ class DerivBridge:
 
     async def place_trade(self, signal: SignalResult) -> Optional[TradeRecord]:
         """
-        Places a 5-minute binary contract based on PROPHET signal.
+        Places a 5-minute binary contract based on VANGUARD signal.
         Returns TradeRecord with contract_id.
         """
         if not self.connected or signal.direction is None:

@@ -32,7 +32,7 @@ async def test_deriv():
             account = auth_resp['authorize']
             print(f"✅ Auth Success! Account: {account['loginid']} | Balance: {account['balance']} {account['currency']}")
             
-            # 2. Test 5-Minute Proposal (What PROPHET actually does)
+            # 2. Test 5-Minute Proposal (What VANGUARD actually does)
             print("\n📈 Requesting test 5-Minute CALL proposal on frxEURUSD...")
             proposal_msg = {
                 "proposal": 1,

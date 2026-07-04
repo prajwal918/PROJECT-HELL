@@ -69,7 +69,7 @@ server.on('connection', async (ws) => {
                     }
                 });
                 
-                nameInput.value = 'Prophet' + Math.floor(Math.random()*1000);
+                nameInput.value = 'Vanguard' + Math.floor(Math.random()*1000);
                 const btns = Array.from(document.querySelectorAll('button'));
                 const createBtn = btns.find(b => b.innerText.includes('Create'));
                 if (createBtn) createBtn.click();

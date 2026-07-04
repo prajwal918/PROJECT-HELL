@@ -122,7 +122,7 @@ Gateway: Rithmic 01
 **Data Source:** MotiveWave (independent)
 **Benefit:** Mature forex system, 152 gates, MT5 execution
 
-### PROPHET
+### VANGUARD
 **Data Source:** Deriv API (independent)
 **Benefit:** Signal-based binary trading
 
@@ -255,7 +255,7 @@ PROJECT HELL/
 │       ├── main.rs              # Now connects to Rithmic directly
 │       └── Cargo.toml
 │
-├── prophet/                     # Independent Binary System
+├── vanguard/                     # Independent Binary System
 │   └── (unchanged)
 │
 └── nova/                        # NOVA + AEGIS (Updated)

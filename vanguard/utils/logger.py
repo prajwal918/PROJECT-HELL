@@ -24,7 +24,7 @@ class TradeLogger:
 
     def _create_tables(self):
         self.conn.executescript("""
-            CREATE TABLE IF NOT EXISTS prophet_signals (
+            CREATE TABLE IF NOT EXISTS vanguard_signals (
                 id              INTEGER PRIMARY KEY AUTOINCREMENT,
                 timestamp       TEXT,
                 asset           TEXT,
@@ -41,7 +41,7 @@ class TradeLogger:
                 reason          TEXT
             );
 
-            CREATE TABLE IF NOT EXISTS prophet_trades (
+            CREATE TABLE IF NOT EXISTS vanguard_trades (
                 id              INTEGER PRIMARY KEY AUTOINCREMENT,
                 timestamp       TEXT,
                 asset           TEXT,
@@ -53,14 +53,14 @@ class TradeLogger:
                 profit          REAL,
                 demo            INTEGER,
                 signal_id       INTEGER,
-                FOREIGN KEY(signal_id) REFERENCES prophet_signals(id)
+                FOREIGN KEY(signal_id) REFERENCES vanguard_signals(id)
             );
         """)
         self.conn.commit()
 
     def log_signal(self, signal) -> int:
         cur = self.conn.execute("""
-            INSERT INTO prophet_signals
+            INSERT INTO vanguard_signals
                 (timestamp, asset, direction, confidence, at_key_level,
                  key_level_type, current_price, cvd_value, volume_zscore,
                  phase1_pass, phase2_pass, phase3_pass, reason)
@@ -85,7 +85,7 @@ class TradeLogger:
 
     def log_trade(self, trade, signal_id: int):
         self.conn.execute("""
-            INSERT INTO prophet_trades
+            INSERT INTO vanguard_trades
                 (timestamp, asset, direction, stake, duration,
                  broker_trade_id, result, profit, demo, signal_id)
             VALUES (?,?,?,?,?,?,?,?,?,?)

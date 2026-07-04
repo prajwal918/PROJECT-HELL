@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """
-PROPHET CLI — Check Trading Status
+VANGUARD CLI — Check Trading Status
 
 Usage:
-    python check_prophet.py
+    python check_vanguard.py
 """
 
 import sys
@@ -17,8 +17,8 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from config import DB_PATH
 
 
-def find_prophet_processes():
-    """Find all PROPHET processes."""
+def find_vanguard_processes():
+    """Find all VANGUARD processes."""
     processes = []
     for proc in psutil.process_iter(['pid', 'name', 'cmdline', 'cpu_percent', 'memory_info']):
         try:
@@ -41,7 +41,7 @@ def get_trade_stats():
         today = datetime.date.today().isoformat()
         cursor.execute("""
             SELECT result, profit
-            FROM prophet_trades
+            FROM vanguard_trades
             WHERE DATE(timestamp) = ?
         """, (today,))
         trades = cursor.fetchall()
@@ -55,7 +55,7 @@ def get_trade_stats():
         # Get recent signals
         cursor.execute("""
             SELECT direction, reason
-            FROM prophet_signals
+            FROM vanguard_signals
             ORDER BY timestamp DESC
             LIMIT 5
         """)
@@ -75,19 +75,19 @@ def get_trade_stats():
         return None
 
 
-def check_prophet_status():
-    """Check PROPHET trading status."""
-    print("📊 PROPHET Status Check")
+def check_vanguard_status():
+    """Check VANGUARD trading status."""
+    print("📊 VANGUARD Status Check")
     print("=" * 50)
 
-    processes = find_prophet_processes()
+    processes = find_vanguard_processes()
 
     if not processes:
-        print("❌ PROPHET is NOT running")
-        print("   Start with: prophet_cli.py start")
+        print("❌ VANGUARD is NOT running")
+        print("   Start with: vanguard_cli.py start")
         return
 
-    print(f"✅ PROPHET is running ({len(processes)} process(es))")
+    print(f"✅ VANGUARD is running ({len(processes)} process(es))")
     print()
 
     for proc in processes:
@@ -119,8 +119,8 @@ def check_prophet_status():
         print("⚠️  No trading data available yet")
         print()
 
-    print("💡 Use 'prophet_cli.py logs' to view detailed logs")
+    print("💡 Use 'vanguard_cli.py logs' to view detailed logs")
 
 
 if __name__ == "__main__":
-    check_prophet_status()
+    check_vanguard_status()

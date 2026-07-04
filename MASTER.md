@@ -15,7 +15,7 @@ PROJECT HELL is a unified trading ecosystem comprising 5 interconnected systems 
 
 1. **OVERSEER** — Real-time forex system with 152 gates
 2. **NEXUS** — Rust backend for L3 order flow data
-3. **PROPHET** — Deriv API binary options system
+3. **VANGUARD** — Deriv API binary options system
 4. **NOVA** — 1-minute news binary system (Phase 1)
 5. **AEGIS** — 15-minute absorption trap system (Phase 2)
 
@@ -63,7 +63,7 @@ PROJECT HELL is a unified trading ecosystem comprising 5 interconnected systems 
 
 ---
 
-### 3. PROPHET — Deriv API Binary Options
+### 3. VANGUARD — Deriv API Binary Options
 
 **Purpose:** Binary options execution on Deriv platform
 
@@ -80,7 +80,7 @@ PROJECT HELL is a unified trading ecosystem comprising 5 interconnected systems 
 **Asset Class:** Binary Options
 **Broker:** Deriv
 
-**Location:** `PROJECT HELL\prophet\`
+**Location:** `PROJECT HELL\vanguard\`
 
 ---
 
@@ -178,11 +178,11 @@ PROJECT HELL is a unified trading ecosystem comprising 5 interconnected systems 
 └──────────────────────────────┘  └─────────────────────────┘
 ```
 
-### Secondary Data Path (PROPHET)
+### Secondary Data Path (VANGUARD)
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
-│                        PROPHET                                 │
+│                        VANGUARD                                 │
 │                                                                 │
 │  • Deriv API integration                                        │
 │  • Signal engine (volume profile, CVD)                          │
@@ -232,7 +232,7 @@ PROJECT HELL is a unified trading ecosystem comprising 5 interconnected systems 
 - **Data:** Binary options execution
 - **Usage:** Automated trade placement
 
-### PROPHET → Deriv API
+### VANGUARD → Deriv API
 - **Protocol:** WebSocket
 - **Service:** Deriv Trading API
 - **Data:** Binary options execution
@@ -321,9 +321,9 @@ python main.py
 - Generates breakout signals
 - Automated execution on Deriv
 
-**Step 6: Start PROPHET (Optional)**
+**Step 6: Start VANGUARD (Optional)**
 ```cmd
-cd "C:\Users\jogip\OneDrive\Desktop\PROJECT HELL\prophet"
+cd "C:\Users\jogip\OneDrive\Desktop\PROJECT HELL\vanguard"
 python main.py
 ```
 - Signal engine for binary options
@@ -350,7 +350,7 @@ NEXUS_WS_URL=ws://localhost:9001
 USE_DEMO_MODE=true
 ```
 
-**PROPHET (.env):**
+**VANGUARD (.env):**
 ```bash
 DERIV_API_TOKEN=your_deriv_token
 USE_DEMO_MODE=true
@@ -381,7 +381,7 @@ USE_DEMO_MODE=true
    - Purpose: Automated binary options execution
    - Scope: Read, Trade
 
-### Required for PROPHET
+### Required for VANGUARD
 
 1. **Deriv API Token**
    - Same as AEGIS (can share token)
@@ -417,7 +417,7 @@ OVERSEER uses local data from MotiveWave UDP feed.
 **Buffer:** 10K ticks delta
 **Performance:** Sub-millisecond latency
 
-### PROPHET
+### VANGUARD
 
 **Language:** Python 3.8+
 **Platform:** All
@@ -475,11 +475,11 @@ PROJECT HELL/
 │   │   └── schemas/
 │   └── src/                     # Web terminal
 │
-├── prophet/                     # Project 3: Deriv Binary System
+├── vanguard/                     # Project 3: Deriv Binary System
 │   ├── main.py
 │   ├── execution/
 │   │   └── deriv_bridge.py
-│   └── prophet_signal/
+│   └── vanguard_signal/
 │
 └── nova/                        # Project 4 & 5: NOVA + AEGIS
     ├── nova_logic/              # Project 4: NOVA
@@ -627,8 +627,8 @@ PROJECT HELL/
 **Location:** `PROJECT HELL\nova\aegis_logic\aegis.log`
 **Content:** Absorption detection, gate scores, trade execution
 
-### PROPHET
-**Location:** `PROJECT HELL\prophet\prophet.log`
+### VANGUARD
+**Location:** `PROJECT HELL\vanguard\vanguard.log`
 **Content:** Signal generation, trade execution, results
 
 ---
@@ -653,7 +653,7 @@ PROJECT HELL/
 - Stake per trade: $10
 - Automatic execution
 
-### PROPHET
+### VANGUARD
 - Max daily trades: 1
 - Max daily loss: $50
 - Stake per trade: $10

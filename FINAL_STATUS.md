@@ -66,7 +66,7 @@ PROJECT HELL has been successfully upgraded to **direct Rithmic integration**, e
 
 ```
 MotiveWave → OVERSEER → MT5/OANDA (Forex)
-Deriv API → PROPHET → Binary Options
+Deriv API → VANGUARD → Binary Options
 ```
 
 ---
@@ -91,7 +91,7 @@ Deriv API → PROPHET → Binary Options
 - Added native order ID tracking
 - Unlimited depth support
 
-### PROPHET (Project 3)
+### VANGUARD (Project 3)
 **Status:** Production Ready
 **Version:** v1.0
 **Data Source:** Deriv API
@@ -191,9 +191,9 @@ cd "C:\Users\jogip\OneDrive\Desktop\PROJECT HELL\overseer"
 python main.py
 ```
 
-**Start PROPHET (Terminal 5):**
+**Start VANGUARD (Terminal 5):**
 ```cmd
-cd "C:\Users\jogip\OneDrive\Desktop\PROJECT HELL\prophet"
+cd "C:\Users\jogip\OneDrive\Desktop\PROJECT HELL\vanguard"
 python main.py
 ```
 
@@ -255,11 +255,11 @@ PROJECT HELL/
 │   │   └── README_V2.md           # NEW (v2.0 docs)
 │   └── src/
 │
-├── prophet/                        # Project 3
+├── vanguard/                        # Project 3
 │   ├── main.py
 │   ├── execution/
 │   │   └── deriv_bridge.py
-│   └── prophet_signal/
+│   └── vanguard_signal/
 │
 └── nova/                           # Projects 4 & 5
     ├── nova_logic/                # Project 4: NOVA

@@ -347,7 +347,7 @@ class OverseerUdpProtocol(asyncio.DatagramProtocol):
         self._malformed_count: int = 0
         self._rebind_count: int = 0
 
-    def _forward_to_prophet(self, tick: dict[str, Any]) -> None:
+    def _forward_to_vanguard(self, tick: dict[str, Any]) -> None:
         if not self.transport:
             return
         try:
@@ -366,22 +366,22 @@ class OverseerUdpProtocol(asyncio.DatagramProtocol):
                 "time": int(tick.get("timestamp", 0)) / 1000.0,
             }
             data = json.dumps(payload).encode("utf-8")
-            self.transport.sendto(data, ("127.0.0.1", 12346)) # PROPHET
+            self.transport.sendto(data, ("127.0.0.1", 12346)) # VANGUARD
             self.transport.sendto(data, ("127.0.0.1", 12347)) # NEXUS
         except Exception as exc:
-            LOGGER.debug("Failed to forward tick to PROPHET: %s", exc)
+            LOGGER.debug("Failed to forward tick to VANGUARD: %s", exc)
 
-    def _forward_l3_to_prophet(self, event: dict[str, Any]) -> None:
+    def _forward_l3_to_vanguard(self, event: dict[str, Any]) -> None:
         if not self.transport:
             return
         try:
             payload = dict(event)
             payload["time"] = int(payload.get("timestamp", 0)) / 1000.0
             data = json.dumps(payload).encode("utf-8")
-            self.transport.sendto(data, ("127.0.0.1", 12346)) # PROPHET
+            self.transport.sendto(data, ("127.0.0.1", 12346)) # VANGUARD
             self.transport.sendto(data, ("127.0.0.1", 12347)) # NEXUS
         except Exception as exc:
-            LOGGER.debug("Failed to forward L3 event to PROPHET: %s", exc)
+            LOGGER.debug("Failed to forward L3 event to VANGUARD: %s", exc)
 
     def connection_made(self, transport: asyncio.BaseTransport) -> None:
         self.transport = transport # type: ignore[assignment]
@@ -415,7 +415,7 @@ class OverseerUdpProtocol(asyncio.DatagramProtocol):
                 symbol = parsed.get("symbol", "")
                 cached_dom = self._dom_cache.get(symbol)
                 tick = _motivewave_tick_to_standard(parsed, cached_dom)
-                self._forward_to_prophet(tick)
+                self._forward_to_vanguard(tick)
                 local_ms = int(time.time() * 1000)
                 drift_ms = abs(local_ms - tick["timestamp"])
                 if drift_ms > MAX_CLOCK_DRIFT_MS:
@@ -437,7 +437,7 @@ class OverseerUdpProtocol(asyncio.DatagramProtocol):
 
             if category == "motivewave_dom":
                 tick = _motivewave_dom_to_standard(parsed)
-                self._forward_to_prophet(tick)
+                self._forward_to_vanguard(tick)
                 raw_bids = parsed.get("bids", [])
                 raw_asks = parsed.get("asks", [])
                 if raw_bids or raw_asks:
@@ -463,7 +463,7 @@ class OverseerUdpProtocol(asyncio.DatagramProtocol):
 
             if category == "motivewave_mbo":
                 mbo_std = _motivewave_mbo_to_standard(parsed)
-                self._forward_l3_to_prophet(mbo_std)
+                self._forward_l3_to_vanguard(mbo_std)
                 if self.l3_queue is not None:
                     try:
                         self.l3_queue.put_nowait(mbo_std)
@@ -492,7 +492,7 @@ class OverseerUdpProtocol(asyncio.DatagramProtocol):
 
             if category == "fxcm_dom":
                 tick = _fxcm_dom_to_standard(parsed)
-                self._forward_to_prophet(tick)
+                self._forward_to_vanguard(tick)
                 dom = tick.get("dom", {})
                 if dom.get("bids") or dom.get("asks"):
                     self._dom_cache[tick.get("symbol", "")] = dom
@@ -506,7 +506,7 @@ class OverseerUdpProtocol(asyncio.DatagramProtocol):
                 symbol = parsed.get("symbol", "")
                 cached_dom = self._dom_cache.get(symbol)
                 tick = _fxcm_tick_to_standard(parsed, cached_dom)
-                self._forward_to_prophet(tick)
+                self._forward_to_vanguard(tick)
                 local_ms = int(time.time() * 1000)
                 drift_ms = abs(local_ms - tick["timestamp"])
                 if drift_ms > MAX_CLOCK_DRIFT_MS:

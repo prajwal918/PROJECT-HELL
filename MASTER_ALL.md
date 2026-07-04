@@ -17,7 +17,7 @@ PROJECT HELL is a unified trading ecosystem comprising 5 interconnected systems 
 |---|---------|------|----------|-----------|-------------|
 | 1 | OVERSEER | Forex (152 gates) | `overseer/` | MT5/OANDA | MotiveWave |
 | 2 | NEXUS | Rust L3 Data Backend | `nexus/rust-backend/` | Distribution only | Rithmic API |
-| 3 | PROPHET | Binary Options | `prophet/` | Deriv API | Deriv API |
+| 3 | VANGUARD | Binary Options | `vanguard/` | Deriv API | Deriv API |
 | 4 | NOVA | 1-min News Binary | `nova/nova_logic/` | Manual (IQ/Pocket Option) | NEXUS (Rithmic) |
 | 5 | AEGIS | 15-min Absorption Trap | `nova/aegis_logic/` | Auto (Deriv API) | NEXUS (Rithmic) |
 
@@ -154,11 +154,11 @@ DELTA_BUFFER_CAPACITY=10000
 
 ---
 
-## 3. PROPHET — Deriv API Binary Options
+## 3. VANGUARD — Deriv API Binary Options
 
 **Purpose:** Binary options execution on Deriv platform
 **Language:** Python 3.8+
-**Location:** `PROJECT HELL\prophet\`
+**Location:** `PROJECT HELL\vanguard\`
 
 ### Key Features:
 - Deriv WebSocket API integration
@@ -366,7 +366,7 @@ asyncio, websockets, requests, python-dotenv, numpy, dataclasses
 
 INDEPENDENT SYSTEMS:
 MotiveWave → OVERSEER → MT5/OANDA (Forex, 152 gates)
-Deriv API → PROPHET → Binary Options
+Deriv API → VANGUARD → Binary Options
 ```
 
 ---
@@ -518,9 +518,9 @@ cd "C:\Users\jogip\OneDrive\Desktop\PROJECT HELL\overseer"
 python main.py
 ```
 
-**Step 5: Start PROPHET**
+**Step 5: Start VANGUARD**
 ```cmd
-cd "C:\Users\jogip\OneDrive\Desktop\PROJECT HELL\prophet"
+cd "C:\Users\jogip\OneDrive\Desktop\PROJECT HELL\vanguard"
 python main.py
 ```
 
@@ -586,21 +586,21 @@ PROJECT HELL/
 │   ├── RUN.md
 │   └── AGENTS.md                 # Nexus Flow Terminal docs
 │
-├── prophet/                      # Project 3: Deriv Binary
+├── vanguard/                      # Project 3: Deriv Binary
 │   ├── main.py
 │   ├── main_deriv.py
 │   ├── config.py
 │   ├── execution/
 │   │   └── deriv_bridge.py
-│   ├── prophet_signal/           # Signal engine
+│   ├── vanguard_signal/           # Signal engine
 │   ├── risk/                     # Risk management
 │   ├── cli/                      # CLI tools
 │   ├── utils/                    # Utilities
 │   ├── data/                     # Data
 │   ├── .env
 │   ├── requirements.txt
-│   ├── prophet_trades.db
-│   └── prophet.log
+│   ├── vanguard_trades.db
+│   └── vanguard.log
 │
 └── nova/                         # Projects 4 & 5
     ├── nova_logic/               # Project 4: NOVA
@@ -715,7 +715,7 @@ LOG_LEVEL=INFO
 | NOVA | FRED | Economic data | stlouisfed.org | ❌ Need key |
 | NOVA | Trading Economics | Calendar | tradingeconomics.com | Optional |
 | AEGIS | Deriv | Binary execution | deriv.com | ❌ Need token |
-| PROPHET | Deriv | Binary execution | deriv.com | ❌ Need token |
+| VANGUARD | Deriv | Binary execution | deriv.com | ❌ Need token |
 
 ---
 
@@ -767,7 +767,7 @@ LOG_LEVEL=INFO
 | OVERSEER | Unlimited | Configurable | Kelly | Auto |
 | NOVA | 3 | $30 | $10 | Manual |
 | AEGIS | 3 | $50 | $10 | Auto |
-| PROPHET | 1 | $50 | $10 | Auto |
+| VANGUARD | 1 | $50 | $10 | Auto |
 
 ---
 
@@ -779,7 +779,7 @@ LOG_LEVEL=INFO
 | NOVA | nova.log | `nova/nova_logic/` |
 | AEGIS | aegis.log | `nova/aegis_logic/` |
 | OVERSEER | overseer.log | `overseer/` |
-| PROPHET | prophet.log | `prophet/` |
+| VANGUARD | vanguard.log | `vanguard/` |
 
 ---
 
@@ -916,7 +916,7 @@ ProjectHellDemo:
   start_nova()             # Displays gate components
   start_aegis()            # Displays gate components
   start_overseer()         # Shows 152 gates, XGBoost, Legendary Mode
-  start_prophet()          # Shows volume profile, CVD, iceberg detection
+  start_vanguard()          # Shows volume profile, CVD, iceberg detection
   show_next_steps()        # 6 action items
 ```
 

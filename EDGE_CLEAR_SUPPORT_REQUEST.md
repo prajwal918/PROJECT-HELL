@@ -97,7 +97,7 @@ Cannot establish WebSocket connection to Rithmic API for paper trading account. 
 - **AEGIS:** 15-min binary options (MBO absorption)
 - **NEXUS:** Rust data pipeline (Rithmic integration)
 - **OVERSEER:** Forex system (152 gates)
-- **PROPHET:** Binary signal system
+- **VANGUARD:** Binary signal system
 
 ### Why We Need Rithmic API
 - **Level 3 MBO Data:** For NOVA/AEGIS L3 detection gates

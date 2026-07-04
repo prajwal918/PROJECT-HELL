@@ -1,5 +1,5 @@
 """
-PROPHET — 5-Minute Binary Direction Engine (90% Win Rate)
+VANGUARD — 5-Minute Binary Direction Engine (90% Win Rate)
 Auto-execution on Deriv via WebSocket using CME Level 3 data
 
 Usage:
@@ -14,7 +14,7 @@ from rich.panel import Panel
 
 from data.cme_feed import CMELevel3Feed
 from data.models import Candle
-from prophet_signal.aggregator_90 import generate_signal_90
+from vanguard_signal.aggregator_90 import generate_signal_90
 from execution.deriv_bridge import DerivBridge
 from risk.manager import RiskManager
 from utils.logger import get_logger, TradeLogger
@@ -27,7 +27,7 @@ from config import (
     USE_DERIV,
 )
 
-log     = get_logger("PROPHET")
+log     = get_logger("VANGUARD")
 console = Console()
 
 
@@ -37,7 +37,7 @@ async def main():
         console.print("[yellow]Add a valid DERIV_API_TOKEN to .env to enable auto-execution.[/yellow]")
 
     console.print(Panel.fit(
-        "[bold cyan]PROPHET v2.0 - Strict Binary Direction Engine[/bold cyan]\n"
+        "[bold cyan]VANGUARD v2.0 - Strict Binary Direction Engine[/bold cyan]\n"
         "15-Minute Candle/Expiry with High-Quality Filter Stack\n"
         f"Asset: [yellow]{ASSET}[/yellow] | "
         f"Mode: [{'green' if DEMO_MODE else 'red'}]{'DEMO' if DEMO_MODE else '⚠ LIVE'}[/]",
@@ -134,4 +134,4 @@ if __name__ == "__main__":
     try:
         asyncio.run(main())
     except KeyboardInterrupt:
-        console.print("\n[yellow]PROPHET stopped.[/yellow]")
+        console.print("\n[yellow]VANGUARD stopped.[/yellow]")

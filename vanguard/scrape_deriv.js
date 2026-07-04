@@ -51,7 +51,7 @@ const fs = require('fs');
         });
         
         // Enter name
-        await page.type('input[placeholder="Token name"]', 'Prophet100');
+        await page.type('input[placeholder="Token name"]', 'Vanguard100');
         await page.click('button[type="submit"]'); // Assuming Create button
         
         await page.waitForTimeout(3000); // Wait for API
