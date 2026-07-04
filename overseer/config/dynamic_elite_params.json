@@ -1,0 +1,466 @@
+{
+  "filters": [
+    {
+      "baseline_train": {
+        "flats": 542,
+        "losses": 51,
+        "nonflat": 90,
+        "total": 632,
+        "wins": 39,
+        "wr_all": 0.061708860759493674,
+        "wr_ex_flat": 0.43333333333333335
+      },
+      "baseline_validation": {
+        "flats": 195,
+        "losses": 40,
+        "nonflat": 77,
+        "total": 272,
+        "wins": 37,
+        "wr_all": 0.13602941176470587,
+        "wr_ex_flat": 0.4805194805194805
+      },
+      "direction": "BUY",
+      "rules": [
+        {
+          "feature": "fw.FW06_session_kz",
+          "op": "<=",
+          "threshold": 0.0
+        }
+      ],
+      "symbol": "6EM6",
+      "train": {
+        "flats": 414,
+        "losses": 43,
+        "nonflat": 74,
+        "total": 488,
+        "wins": 31,
+        "wr_all": 0.06352459016393443,
+        "wr_ex_flat": 0.4189189189189189
+      },
+      "validation": {
+        "flats": 61,
+        "losses": 4,
+        "nonflat": 17,
+        "total": 78,
+        "wins": 13,
+        "wr_all": 0.16666666666666666,
+        "wr_ex_flat": 0.7647058823529411
+      }
+    },
+    {
+      "baseline_train": {
+        "flats": 537,
+        "losses": 129,
+        "nonflat": 251,
+        "total": 788,
+        "wins": 122,
+        "wr_all": 0.1548223350253807,
+        "wr_ex_flat": 0.4860557768924303
+      },
+      "baseline_validation": {
+        "flats": 127,
+        "losses": 138,
+        "nonflat": 212,
+        "total": 339,
+        "wins": 74,
+        "wr_all": 0.2182890855457227,
+        "wr_ex_flat": 0.3490566037735849
+      },
+      "direction": "BUY",
+      "rules": [
+        {
+          "feature": "bias.l3_bias",
+          "op": "<=",
+          "threshold": 0.5
+        },
+        {
+          "feature": "bias.raw_bias",
+          "op": "<=",
+          "threshold": 0.5
+        }
+      ],
+      "symbol": "6AM6",
+      "train": {
+        "flats": 297,
+        "losses": 81,
+        "nonflat": 144,
+        "total": 441,
+        "wins": 63,
+        "wr_all": 0.14285714285714285,
+        "wr_ex_flat": 0.4375
+      },
+      "validation": {
+        "flats": 28,
+        "losses": 6,
+        "nonflat": 23,
+        "total": 51,
+        "wins": 17,
+        "wr_all": 0.3333333333333333,
+        "wr_ex_flat": 0.7391304347826086
+      }
+    },
+    {
+      "baseline_train": {
+        "flats": 490,
+        "losses": 204,
+        "nonflat": 461,
+        "total": 951,
+        "wins": 257,
+        "wr_all": 0.27024185068349105,
+        "wr_ex_flat": 0.5574837310195228
+      },
+      "baseline_validation": {
+        "flats": 71,
+        "losses": 288,
+        "nonflat": 337,
+        "total": 408,
+        "wins": 49,
+        "wr_all": 0.12009803921568628,
+        "wr_ex_flat": 0.14540059347181009
+      },
+      "direction": "BUY",
+      "rules": [
+        {
+          "feature": "l3.hft_signal",
+          "op": ">=",
+          "threshold": 0.05
+        },
+        {
+          "feature": "l3.l3_confidence",
+          "op": ">=",
+          "threshold": 0.8
+        }
+      ],
+      "symbol": "6BM6",
+      "train": {
+        "flats": 57,
+        "losses": 18,
+        "nonflat": 56,
+        "total": 113,
+        "wins": 38,
+        "wr_all": 0.336283185840708,
+        "wr_ex_flat": 0.6785714285714286
+      },
+      "validation": {
+        "flats": 7,
+        "losses": 3,
+        "nonflat": 10,
+        "total": 17,
+        "wins": 7,
+        "wr_all": 0.4117647058823529,
+        "wr_ex_flat": 0.7
+      }
+    },
+    {
+      "baseline_train": {
+        "flats": 311,
+        "losses": 63,
+        "nonflat": 84,
+        "total": 395,
+        "wins": 21,
+        "wr_all": 0.053164556962025315,
+        "wr_ex_flat": 0.25
+      },
+      "baseline_validation": {
+        "flats": 152,
+        "losses": 11,
+        "nonflat": 18,
+        "total": 170,
+        "wins": 7,
+        "wr_all": 0.041176470588235294,
+        "wr_ex_flat": 0.3888888888888889
+      },
+      "direction": "SELL",
+      "rules": [
+        {
+          "feature": "l3.l3_confidence",
+          "op": "<=",
+          "threshold": 0.68448
+        },
+        {
+          "feature": "fw.FW06_session_kz",
+          "op": "<=",
+          "threshold": 0.0
+        },
+        {
+          "feature": "bias.l3_bias",
+          "op": ">=",
+          "threshold": 0.4
+        }
+      ],
+      "symbol": "6EM6",
+      "train": {
+        "flats": 96,
+        "losses": 22,
+        "nonflat": 33,
+        "total": 129,
+        "wins": 11,
+        "wr_all": 0.08527131782945736,
+        "wr_ex_flat": 0.3333333333333333
+      },
+      "validation": {
+        "flats": 33,
+        "losses": 3,
+        "nonflat": 10,
+        "total": 43,
+        "wins": 7,
+        "wr_all": 0.16279069767441862,
+        "wr_ex_flat": 0.7
+      }
+    },
+    {
+      "baseline_train": {
+        "flats": 460,
+        "losses": 66,
+        "nonflat": 98,
+        "total": 558,
+        "wins": 32,
+        "wr_all": 0.05734767025089606,
+        "wr_ex_flat": 0.32653061224489793
+      },
+      "baseline_validation": {
+        "flats": 172,
+        "losses": 46,
+        "nonflat": 68,
+        "total": 240,
+        "wins": 22,
+        "wr_all": 0.09166666666666666,
+        "wr_ex_flat": 0.3235294117647059
+      },
+      "direction": "BUY",
+      "rules": [
+        {
+          "feature": "l3.hft_synchronized_volume",
+          "op": ">=",
+          "threshold": 4105.0
+        }
+      ],
+      "symbol": "6JM6",
+      "train": {
+        "flats": 103,
+        "losses": 32,
+        "nonflat": 38,
+        "total": 141,
+        "wins": 6,
+        "wr_all": 0.0425531914893617,
+        "wr_ex_flat": 0.15789473684210525
+      },
+      "validation": {
+        "flats": 38,
+        "losses": 5,
+        "nonflat": 13,
+        "total": 51,
+        "wins": 8,
+        "wr_all": 0.1568627450980392,
+        "wr_ex_flat": 0.6153846153846154
+      }
+    },
+    {
+      "baseline_train": {
+        "flats": 246,
+        "losses": 97,
+        "nonflat": 140,
+        "total": 386,
+        "wins": 43,
+        "wr_all": 0.11139896373056994,
+        "wr_ex_flat": 0.30714285714285716
+      },
+      "baseline_validation": {
+        "flats": 119,
+        "losses": 40,
+        "nonflat": 47,
+        "total": 166,
+        "wins": 7,
+        "wr_all": 0.04216867469879518,
+        "wr_ex_flat": 0.14893617021276595
+      },
+      "direction": "SELL",
+      "rules": [
+        {
+          "feature": "l3.l3_prediction",
+          "op": "<=",
+          "threshold": 0.0
+        }
+      ],
+      "symbol": "6AM6",
+      "train": {
+        "flats": 62,
+        "losses": 15,
+        "nonflat": 32,
+        "total": 94,
+        "wins": 17,
+        "wr_all": 0.18085106382978725,
+        "wr_ex_flat": 0.53125
+      },
+      "validation": {
+        "flats": 48,
+        "losses": 5,
+        "nonflat": 11,
+        "total": 59,
+        "wins": 6,
+        "wr_all": 0.1016949152542373,
+        "wr_ex_flat": 0.5454545454545454
+      }
+    },
+    {
+      "baseline_train": {
+        "flats": 200,
+        "losses": 151,
+        "nonflat": 202,
+        "total": 402,
+        "wins": 51,
+        "wr_all": 0.12686567164179105,
+        "wr_ex_flat": 0.2524752475247525
+      },
+      "baseline_validation": {
+        "flats": 80,
+        "losses": 81,
+        "nonflat": 93,
+        "total": 173,
+        "wins": 12,
+        "wr_all": 0.06936416184971098,
+        "wr_ex_flat": 0.12903225806451613
+      },
+      "direction": "SELL",
+      "rules": [
+        {
+          "feature": "bias.l3_bias",
+          "op": "<=",
+          "threshold": 0.517831
+        },
+        {
+          "feature": "score",
+          "op": "<=",
+          "threshold": 0.657138
+        },
+        {
+          "feature": "bias.raw_bias",
+          "op": "<=",
+          "threshold": 0.58407
+        }
+      ],
+      "symbol": "6BM6",
+      "train": {
+        "flats": 39,
+        "losses": 22,
+        "nonflat": 31,
+        "total": 70,
+        "wins": 9,
+        "wr_all": 0.12857142857142856,
+        "wr_ex_flat": 0.2903225806451613
+      },
+      "validation": {
+        "flats": 5,
+        "losses": 6,
+        "nonflat": 12,
+        "total": 17,
+        "wins": 6,
+        "wr_all": 0.35294117647058826,
+        "wr_ex_flat": 0.5
+      }
+    },
+    {
+      "baseline_train": {
+        "flats": 873,
+        "losses": 69,
+        "nonflat": 232,
+        "total": 1105,
+        "wins": 163,
+        "wr_all": 0.14751131221719457,
+        "wr_ex_flat": 0.7025862068965517
+      },
+      "baseline_validation": {
+        "flats": 67,
+        "losses": 389,
+        "nonflat": 407,
+        "total": 474,
+        "wins": 18,
+        "wr_all": 0.0379746835443038,
+        "wr_ex_flat": 0.044226044226044224
+      },
+      "direction": "BUY",
+      "rules": [
+        {
+          "feature": "l3.hft_signal",
+          "op": ">=",
+          "threshold": 0.05
+        },
+        {
+          "feature": "l3.l3_confidence",
+          "op": ">=",
+          "threshold": 0.9
+        }
+      ],
+      "symbol": "6CM6",
+      "train": {
+        "flats": 98,
+        "losses": 14,
+        "nonflat": 36,
+        "total": 134,
+        "wins": 22,
+        "wr_all": 0.16417910447761194,
+        "wr_ex_flat": 0.6111111111111112
+      },
+      "validation": {
+        "flats": 4,
+        "losses": 16,
+        "nonflat": 22,
+        "total": 26,
+        "wins": 6,
+        "wr_all": 0.23076923076923078,
+        "wr_ex_flat": 0.2727272727272727
+      }
+    },
+    {
+      "baseline_train": {
+        "flats": 320,
+        "losses": 56,
+        "nonflat": 67,
+        "total": 387,
+        "wins": 11,
+        "wr_all": 0.028423772609819122,
+        "wr_ex_flat": 0.16417910447761194
+      },
+      "baseline_validation": {
+        "flats": 146,
+        "losses": 20,
+        "nonflat": 20,
+        "total": 166,
+        "wins": 0,
+        "wr_all": 0.0,
+        "wr_ex_flat": 0.0
+      },
+      "direction": "SELL",
+      "rules": [
+        {
+          "feature": "fw.FW10_post_news",
+          "op": "<=",
+          "threshold": 0.5
+        }
+      ],
+      "symbol": "6JM6",
+      "train": {
+        "flats": 221,
+        "losses": 50,
+        "nonflat": 51,
+        "total": 272,
+        "wins": 1,
+        "wr_all": 0.003676470588235294,
+        "wr_ex_flat": 0.0196078431372549
+      },
+      "validation": {
+        "flats": 50,
+        "losses": 16,
+        "nonflat": 16,
+        "total": 66,
+        "wins": 0,
+        "wr_all": 0.0,
+        "wr_ex_flat": 0.0
+      }
+    }
+  ],
+  "max_rules": 3,
+  "min_train_nonflat": 30,
+  "min_val_nonflat": 10,
+  "train_fraction": 0.7
+}

@@ -1,0 +1,31 @@
+============================================================
+  OVERSEER v12 — BACKTEST REPORT
+============================================================
+  Ticks processed:   1,488,336
+  Total trades:      2
+  Win rate:          0.0%
+  Total P&L:         $-1.14
+  Final balance:     $9998.72
+  Sharpe ratio:      0.0000
+  Profit factor:     0.0000
+  Expectancy:        $-0.5700
+  Max drawdown:      $1.21 (0.0%)
+
+  Averages:
+    Avg win:         $0.00
+    Avg loss:        $-0.57
+    Best trade:      $-0.57
+    Worst trade:     $-0.57
+    Avg pips/trade:  -5.00
+
+  Direction breakdown:
+    BUY: 1 trades, 0.0% WR, $-0.57 P&L
+    SELL: 1 trades, 0.0% WR, $-0.57 P&L
+
+  Exit reasons:
+    STOP_LOSS: 2
+
+  Last 10 trades:
+    #100001 BUY EURUSD entry=1.03520 exit=1.03470 pnl=$-0.57 (-5.0p) [STOP_LOSS]
+    #100002 SELL EURUSD entry=1.03486 exit=1.03536 pnl=$-0.57 (-5.0p) [STOP_LOSS]
+============================================================

@@ -1,0 +1,27 @@
+[package]
+name = "rithmic-mbo-pipe"
+version = "0.1.0"
+edition = "2021"
+description = "Rithmic L3 MBO data pipeline for NOVA/AEGIS — connects to Rithmic WSS, parses MBO protobufs, bridges to local WS"
+
+[[bin]]
+name = "rithmic_pipe"
+path = "src/main.rs"
+
+[dependencies]
+tokio = { version = "1", features = ["full"] }
+tokio-tungstenite = { version = "0.24", features = ["native-tls"] }
+futures-util = "0.3"
+prost = "0.13"
+prost-types = "0.13"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+url = "2"
+native-tls = "0.2"
+log = "0.4"
+env_logger = "0.11"
+chrono = { version = "0.4", features = ["serde"] }
+bytes = "1"
+
+[build-dependencies]
+prost-build = "0.13"

@@ -1,0 +1,142 @@
+[
+  {
+    "symbol": "6AM6",
+    "direction": "BUY",
+    "status": "WATCHLIST",
+    "rules": [],
+    "reason": "Baseline performance: 45.0% WR",
+    "validation": {
+      "wr_ex_flat": 0.44991789819376027,
+      "nonflat": 609
+    }
+  },
+  {
+    "symbol": "6BM6",
+    "direction": "BUY",
+    "status": "WATCHLIST",
+    "rules": [],
+    "reason": "Baseline performance: 37.3% WR",
+    "validation": {
+      "wr_ex_flat": 0.37326732673267327,
+      "nonflat": 1010
+    }
+  },
+  {
+    "symbol": "6AM6",
+    "direction": "SELL",
+    "status": "TRADE_CANDIDATE",
+    "rules": [
+      {
+        "feature": "FW03_volume",
+        "op": ">=",
+        "threshold": 0.5
+      }
+    ],
+    "reason": "Autonomously optimized: FW03_volume >= 0.5 yields 100.0% WR (n=141)",
+    "validation": {
+      "wr_ex_flat": 1.0,
+      "nonflat": 339
+    }
+  },
+  {
+    "symbol": "6BM6",
+    "direction": "SELL",
+    "status": "TRADE_CANDIDATE",
+    "rules": [
+      {
+        "feature": "FW03_volume",
+        "op": ">=",
+        "threshold": 0.5
+      }
+    ],
+    "reason": "Autonomously optimized: FW03_volume >= 0.5 yields 90.0% WR (n=10)",
+    "validation": {
+      "wr_ex_flat": 0.9,
+      "nonflat": 305
+    }
+  },
+  {
+    "symbol": "6JM6",
+    "direction": "BUY",
+    "status": "WATCHLIST",
+    "rules": [],
+    "reason": "Baseline performance: 33.7% WR",
+    "validation": {
+      "wr_ex_flat": 0.33727810650887574,
+      "nonflat": 169
+    }
+  },
+  {
+    "symbol": "6JM6",
+    "direction": "SELL",
+    "status": "WATCHLIST",
+    "rules": [],
+    "reason": "Baseline performance: 33.0% WR",
+    "validation": {
+      "wr_ex_flat": 0.33006736068585424,
+      "nonflat": 1633
+    }
+  },
+  {
+    "symbol": "6EM6",
+    "direction": "SELL",
+    "status": "TRADE_CANDIDATE",
+    "rules": [
+      {
+        "feature": "FW03_volume",
+        "op": ">=",
+        "threshold": 0.5
+      }
+    ],
+    "reason": "Autonomously optimized: FW03_volume >= 0.5 yields 100.0% WR (n=26)",
+    "validation": {
+      "wr_ex_flat": 1.0,
+      "nonflat": 129
+    }
+  },
+  {
+    "symbol": "6EM6",
+    "direction": "BUY",
+    "status": "WATCHLIST",
+    "rules": [
+      {
+        "feature": "FW15_l3_flow",
+        "op": ">=",
+        "threshold": 0.6
+      }
+    ],
+    "reason": "Autonomously optimized: FW15_l3_flow >= 0.6 yields 88.9% WR (n=45)",
+    "validation": {
+      "wr_ex_flat": 0.8888888888888888,
+      "nonflat": 220
+    }
+  },
+  {
+    "symbol": "6CM6",
+    "direction": "SELL",
+    "status": "TRADE_CANDIDATE",
+    "rules": [
+      {
+        "feature": "FW19_fundamental",
+        "op": ">=",
+        "threshold": 0.5
+      }
+    ],
+    "reason": "Autonomously optimized: FW19_fundamental >= 0.5 yields 100.0% WR (n=39)",
+    "validation": {
+      "wr_ex_flat": 1.0,
+      "nonflat": 2108
+    }
+  },
+  {
+    "symbol": "6CM6",
+    "direction": "BUY",
+    "status": "WATCHLIST",
+    "rules": [],
+    "reason": "Baseline performance: 21.7% WR",
+    "validation": {
+      "wr_ex_flat": 0.21734104046242775,
+      "nonflat": 865
+    }
+  }
+]

@@ -1,0 +1,54 @@
+namespace nexus;
+
+enum Action: uint8 {
+  INSERT = 0,
+  UPDATE = 1,
+  DELETE = 2,
+  TRADE = 3,
+  TOP_OF_BOOK = 4,
+}
+
+enum Side: uint8 {
+  BID = 0,
+  ASK = 1,
+}
+
+table TickMessage {
+  timestamp_ns: ulong;
+  price: double;
+  bid_size: float;
+  ask_size: float;
+  trade_size: float;
+  order_id: uint32;
+  action: Action;
+  side: Side;
+  flags: uint8;
+  seq_num: ulong;
+}
+
+table SnapshotLevel {
+  price: double;
+  bid_size: float;
+  ask_size: float;
+  order_count: uint32;
+}
+
+table SnapshotMessage {
+  levels: [SnapshotLevel];
+  snapshot_seq_num: ulong;
+  symbol: string;
+}
+
+table RecoveryRequest {
+  last_seq_num: ulong;
+  symbol: string;
+}
+
+table DeltaSyncMessage {
+  ticks: [TickMessage];
+  from_seq_num: ulong;
+  to_seq_num: ulong;
+}
+
+root_type TickMessage;
+file_identifier "NXTF";

@@ -1,0 +1,53 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #0B0E11;
+  color: #787B86;
+  font-family: 'Courier New', 'Consolas', monospace;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: #0B0E11; }
+::-webkit-scrollbar-thumb { background: #1E222D; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #363A45; }
+
+select, button { font-family: 'Courier New', 'Consolas', monospace; }
+
+canvas { image-rendering: pixelated; }
+
+@keyframes flash-trade {
+  0% { background-color: rgba(38, 166, 154, 0.35); }
+  100% { background-color: transparent; }
+}
+
+.flash-trade {
+  animation: flash-trade 0.15s ease-out;
+}
+
+@keyframes flash-trade-sell {
+  0% { background-color: rgba(239, 83, 80, 0.35); }
+  100% { background-color: transparent; }
+}
+
+.flash-trade-sell {
+  animation: flash-trade-sell 0.15s ease-out;
+}
+
+@keyframes pulse-liquidation {
+  0% { opacity: 1; }
+  50% { opacity: 0.3; }
+  100% { opacity: 1; }
+}
+
+.pulse-liquidation {
+  animation: pulse-liquidation 1s ease-in-out infinite;
+}

@@ -1,0 +1,20 @@
+{
+  "ecb_ref_rate": {
+    "value": 2.4,
+    "date": "2026-06-17",
+    "label": "ECB Main Refinancing Rate",
+    "series_id": "ecb_ref_rate"
+  },
+  "ecb_deposit_rate": {
+    "value": 2.25,
+    "date": "2026-06-17",
+    "label": "ECB Deposit Facility Rate",
+    "series_id": "ecb_deposit_rate"
+  },
+  "eur_3m_euribor": {
+    "value": 2.2261,
+    "date": "2026-05",
+    "label": "3M Euribor",
+    "series_id": "eur_3m_euribor"
+  }
+}

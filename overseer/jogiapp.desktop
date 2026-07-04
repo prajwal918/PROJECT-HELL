@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=jogiapp
+Comment=Run OVERSEER signal-only pipeline
+Exec=/home/jogi999/Music/dfg/urlr/jogiapp.sh
+Path=/home/jogi999/Music/dfg/urlr
+Terminal=false
+Categories=Utility;Finance;
+StartupNotify=true

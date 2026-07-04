@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="OverseerMotiveWaveBridge" default="deploy" basedir=".">
+
+  <property name="src.dir" value="."/>
+  <property name="build.dir" value="build"/>
+  <property name="sdk.jar" value="C:\Program Files (x86)\MotiveWave\lib\mwave_sdk.jar"/>
+  <property name="extensions.dir" value="C:\Users\jogip\MotiveWave Extensions"/>
+  <property name="last.updated" value="${extensions.dir}\.last_updated"/>
+
+  <target name="clean">
+    <delete dir="${build.dir}"/>
+  </target>
+
+  <target name="compile">
+    <mkdir dir="${build.dir}"/>
+    <javac srcdir="${src.dir}"
+           destdir="${build.dir}"
+           source="11"
+           target="11"
+           includeantruntime="false"
+           debug="true">
+      <classpath>
+        <pathelement location="${sdk.jar}"/>
+      </classpath>
+      <include name="OverseerMotiveWaveBridge.java"/>
+    </javac>
+  </target>
+
+  <target name="jar" depends="compile">
+    <jar destfile="${build.dir}\OverseerMotiveWaveBridge.jar"
+         basedir="${build.dir}"
+         includes="com/**"/>
+  </target>
+
+  <target name="deploy" depends="jar">
+    <copy file="${build.dir}\OverseerMotiveWaveBridge.jar"
+          todir="${extensions.dir}"
+          overwrite="true"/>
+    <touch file="${last.updated}"/>
+    <echo message="Deployed to ${extensions.dir}"/>
+    <echo message="Touch .last_updated to signal MotiveWave to reload."/>
+  </target>
+
+  <target name="undeploy">
+    <delete file="${extensions.dir}\OverseerMotiveWaveBridge.jar" quiet="true"/>
+    <touch file="${last.updated}"/>
+    <echo message="Removed from ${extensions.dir}"/>
+  </target>
+</project>

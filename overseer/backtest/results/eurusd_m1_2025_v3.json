@@ -1,0 +1,35 @@
+{
+  "total_trades": 12239,
+  "win_rate": 0.1646,
+  "total_pnl": -3449.98,
+  "final_balance": 5693.22,
+  "sharpe_ratio": -6.8947,
+  "profit_factor": 0.408,
+  "expectancy": -0.2819,
+  "max_drawdown": 4306.71,
+  "max_drawdown_pct": 43.07,
+  "avg_win": 1.18,
+  "avg_loss": -0.57,
+  "best_trade": 1.18,
+  "worst_trade": -0.57,
+  "avg_pnl_pips": -2.12,
+  "exit_reasons": {
+    "STOP_LOSS": 10224,
+    "TAKE_PROFIT": 2015
+  },
+  "direction_stats": {
+    "BUY": {
+      "count": 1,
+      "wins": 0,
+      "win_rate": 0.0,
+      "pnl": -0.57
+    },
+    "SELL": {
+      "count": 12238,
+      "wins": 2015,
+      "win_rate": 0.16465108677888543,
+      "pnl": -3449.4099999999994
+    }
+  },
+  "tick_count": 1488336
+}

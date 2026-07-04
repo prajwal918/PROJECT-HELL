@@ -1,0 +1,6 @@
+asyncio
+websockets
+requests
+python-dotenv
+numpy
+dataclasses
