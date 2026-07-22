@@ -1,0 +1,11 @@
+.git
+.github
+node_modules/
+__pycache__/
+*.pyc
+.env
+.venv
+venv/
+tests/
+CONTRIBUTING.md
+.prettierrc
